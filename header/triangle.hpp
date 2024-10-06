@@ -3,11 +3,11 @@
 
 class Triangle {
     private:
-        int base;
-        int height;
+        float base;
+        float height;
     public:
-        void set_base(int b);
-        void set_height(int h);
+        void set_base(float b);
+        void set_height(float h);
         double area();
 };
 

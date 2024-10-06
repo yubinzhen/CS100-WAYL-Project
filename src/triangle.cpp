@@ -1,10 +1,10 @@
 #include "../header/triangle.hpp"
 
-void Triangle::set_base(int b) {
+void Triangle::set_base(float b) {
     this->base = b;
 }
 
-void Triangle::set_height(int h) {
+void Triangle::set_height(float h) {
     this->height = h;
 }
 

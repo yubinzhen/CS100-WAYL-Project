@@ -1,4 +1,5 @@
 #include <iostream>
+#include <exception>
 #include "../header/triangle.hpp"
 #include "../header/rectangle.hpp"
 
@@ -15,8 +16,16 @@ int main() {
     if (choice == 1) {
         cout << "Enter the height of the rectangle: " << endl;
         cin >> height;
+        if (!cin || height < 0) {
+            cout << "Invalid input" << endl;
+            throw runtime_error("Invalid input");
+        }
         cout << "Enter the width of the rectangle: " << endl;
         cin >> width;
+        if (!cin || width < 0) {
+            cout << "Invalid input" << endl;
+            throw runtime_error("Invalid input");
+        }
 
         Rectangle rect1;
         rect1.set_width(width);
@@ -25,8 +34,16 @@ int main() {
     } else if (choice == 2) {
         cout << "Enter the base of the triangle: " << endl;
         cin >> base;
+        if (!cin || base < 0) {
+            cout << "Invalid input" << endl;
+            throw runtime_error("Invalid input");
+        }
         cout << "Enter the height of the triangle: " << endl;
         cin >> height;
+        if (!cin || height < 0) {
+            cout << "Invalid input" << endl;
+            throw runtime_error("Invalid input");
+        }
 
         Triangle tri1;
         tri1.set_base(base);
