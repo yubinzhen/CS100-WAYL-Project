@@ -18,8 +18,19 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
  > * Why is it important or interesting to you?
+> We are interested in the idea of creating interactive experiences that engage users. An RPG will give us the most creative freedom. We are interested in creating our own turn-based game derived from Pokemon. We will be able to create our own features based on the Pokemon games while also learning how to implement the game mechanics and gameplay experiences that power them. We will also be able to add our own narrative spin on it.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+>  C++
+Visual Studios Code
+Github/Git
+Valgrind
+GDB
+CMake
+
  > * What will be the input/output of your project?
+> Input: All input comes from the user's keyboard, which determines certain actions such as switching between Pokemon, choosing to battle a Pokemon, or selecting options during a battle.
+Output: The output includes updating and displaying the user and CPU Pokemon’s statuses, or the result of a certain action of the user.
+
  > * What are the features that the project provides?
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
