@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \A Text-Based Role-Playing Game\
+# A Text-Based Role-Playing Game
  > Your author list below should include links to all members GitHub (remove existing author).
  
  > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
@@ -25,7 +25,7 @@ Visual Studios Code\
 Github/Git\
 Valgrind\
 GDB\
-CMake\
+CMake
 
  > * What will be the input/output of your project?\
 > Input: All input comes from the user's keyboard, which determines certain actions such as switching between Pokemon, choosing to battle a Pokemon, or selecting options during a battle.\
