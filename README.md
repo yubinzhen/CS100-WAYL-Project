@@ -19,7 +19,7 @@ Input/outputs:
 Output: The output includes updating and displaying the user and CPU Pokemon’s statuses, or the result of a certain action of the user.
 
 Features
->    Battling wild Pokemon with owned Pokemon
+>    Battling wild Pokemon with owned Pokemon\
 User choice to attack, heal, catch, etc. during battle\
 Distinct attack, health, and type stats for each Pokemon\
 Experience/leveling and money system\
