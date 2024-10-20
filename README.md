@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<A Text-Based Role-Playing Game\>
+# \A Text-Based Role-Playing Game\
  > Your author list below should include links to all members GitHub (remove existing author).
  
  > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
@@ -17,18 +17,18 @@
 
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?
+ > * Why is it important or interesting to you?\
 > We are interested in the idea of creating interactive experiences that engage users. An RPG will give us the most creative freedom. We are interested in creating our own turn-based game derived from Pokemon. We will be able to create our own features based on the Pokemon games while also learning how to implement the game mechanics and gameplay experiences that power them. We will also be able to add our own narrative spin on it.
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
->  C++
-Visual Studios Code
-Github/Git
-Valgrind
-GDB
-CMake
+ > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)\
+>  C++\
+Visual Studios Code\
+Github/Git\
+Valgrind\
+GDB\
+CMake\
 
- > * What will be the input/output of your project?
-> Input: All input comes from the user's keyboard, which determines certain actions such as switching between Pokemon, choosing to battle a Pokemon, or selecting options during a battle.
+ > * What will be the input/output of your project?\
+> Input: All input comes from the user's keyboard, which determines certain actions such as switching between Pokemon, choosing to battle a Pokemon, or selecting options during a battle.\
 Output: The output includes updating and displaying the user and CPU Pokemon’s statuses, or the result of a certain action of the user.
 
  > * What are the features that the project provides?
