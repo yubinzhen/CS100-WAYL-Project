@@ -6,7 +6,7 @@
 
 > We are interested in the idea of creating interactive experiences that engage users. An RPG will give us the most creative freedom. We are interested in creating our own turn-based game derived from Pokemon. We will be able to create our own features based on the Pokemon games while also learning how to implement the game mechanics and gameplay experiences that power them. We will also be able to add our own narrative spin on it.
 
-Language and Tools:
+### Language and Tools:
 > C++\
  Visual Studios Code\
  Github/Git\
@@ -14,11 +14,11 @@ Language and Tools:
  GDB\
  CMake
 
-Input/outputs:
+### Input/Outputs:
 > Input: All input comes from the user's keyboard, which determines certain actions such as switching between Pokemon, choosing to battle a Pokemon, or selecting options during a battle.\
 Output: The output includes updating and displaying the user and CPU Pokemon’s statuses, or the result of a certain action of the user.
 
-Features:
+### Features:
 > Battling wild Pokemon with owned Pokemon\
 User choice to attack, heal, catch, etc. during battle\
 Distinct attack, health, and type stats for each Pokemon\
