@@ -4,7 +4,7 @@
 # A Text-Based Role-Playing Game
  > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: \<[Luke Matsunaga](https://github.com/ActualCookie88)\>, \<[Wesley Wu]\>(https://github.com/xxiyun), \<[Yubin Zhen](https://github.com/yubinzhen)\>, \<[Allen Ahn](https://github.com/hanking7)\>
 
  > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list and start thinking about the features you will implement. If you want to propose your own original idea, you will have to contact your instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings.
 
@@ -20,18 +20,27 @@
  > * Why is it important or interesting to you?\
 > We are interested in the idea of creating interactive experiences that engage users. An RPG will give us the most creative freedom. We are interested in creating our own turn-based game derived from Pokemon. We will be able to create our own features based on the Pokemon games while also learning how to implement the game mechanics and gameplay experiences that power them. We will also be able to add our own narrative spin on it.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)\
->  C++\
-Visual Studios Code\
-Github/Git\
-Valgrind\
-GDB\
-CMake
+>  * C++\
+* Visual Studios Code\
+* Github/Git\
+* Valgrind\
+* GDB\
+* CMake
 
  > * What will be the input/output of your project?\
 > Input: All input comes from the user's keyboard, which determines certain actions such as switching between Pokemon, choosing to battle a Pokemon, or selecting options during a battle.\
 Output: The output includes updating and displaying the user and CPU Pokemon’s statuses, or the result of a certain action of the user.
 
- > * What are the features that the project provides?
+ > * What are the features that the project provides?\
+>  * Battling wild Pokemon with owned Pokemon
+* User choice to attack, heal, catch, etc. during battle
+* Distinct attack, health, and type stats for each Pokemon
+* Experience/leveling and money system
+* Able to use/buy items with money earned from battles
+* Catch success rate for wild Pokemon varies 
+* Wild Pokemon appearance/stats scale to the user’s progress
+* Wild Pokemon actions are randomized 
+
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
  > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
