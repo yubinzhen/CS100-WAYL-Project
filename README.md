@@ -1,25 +1,25 @@
 # A Text-Based Role-Playing Game
- > Authors: [Luke Matsunaga](https://github.com/ActualCookie88), [Wesley Wu](https://github.com/xxiyun), [Yubin Zhen](https://github.com/yubinzhen), [Allen Ahn](https://github.com/hanking7)
+ Authors: [Luke Matsunaga](https://github.com/ActualCookie88), [Wesley Wu](https://github.com/xxiyun), [Yubin Zhen](https://github.com/yubinzhen), [Allen Ahn](https://github.com/hanking7)
 
 ## Project Description
-> In this game, the user can first choose one Pokemon among three to play with, and use their Pokemon to fight and catch other wild Pokemon. Pokemon are associated with different types of types and abilities, and their stats vary by their level. At each step of the game, a narrative is presented and the user can select between different options. The goal of the user is to continually level up their Pokemon through battles with CPUs and eventually catch every Pokemon in this game. 
+In this game, the user can first choose one Pokemon among three to play with, and use their Pokemon to fight and catch other wild Pokemon. Pokemon are associated with different types of types and abilities, and their stats vary by their level. At each step of the game, a narrative is presented and the user can select between different options. The goal of the user is to continually level up their Pokemon through battles with CPUs and eventually catch every Pokemon in this game. 
 
-> We are interested in the idea of creating interactive experiences that engage users. An RPG will give us the most creative freedom. We are interested in creating our own turn-based game derived from Pokemon. We will be able to create our own features based on the Pokemon games while also learning how to implement the game mechanics and gameplay experiences that power them. We will also be able to add our own narrative spin on it.
+We are interested in the idea of creating interactive experiences that engage users. An RPG will give us the most creative freedom. We are interested in creating our own turn-based game derived from Pokemon. We will be able to create our own features based on the Pokemon games while also learning how to implement the game mechanics and gameplay experiences that power them. We will also be able to add our own narrative spin on it.
 
 ### Language and Tools:
-> C++\
- Visual Studios Code\
- Github/Git\
- Valgrind\
- GDB\
- CMake
+C++\
+Visual Studios Code\
+Github/Git\
+Valgrind\
+GDB\
+CMake
 
 ### Input/Outputs:
-> Input: All input comes from the user's keyboard, which determines certain actions such as switching between Pokemon, choosing to battle a Pokemon, or selecting options during a battle.\
+Input: All input comes from the user's keyboard, which determines certain actions such as switching between Pokemon, choosing to battle a Pokemon, or selecting options during a battle.\
 Output: The output includes updating and displaying the user and CPU Pokemon’s statuses, or the result of a certain action of the user.
 
 ### Features:
-> Battling wild Pokemon with owned Pokemon\
+Battling wild Pokemon with owned Pokemon\
 User choice to attack, heal, catch, etc. during battle\
 Distinct attack, health, and type stats for each Pokemon\
 Experience/leveling and money system\
