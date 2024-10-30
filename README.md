@@ -27,6 +27,7 @@ Able to use/buy items with money earned from battles\
 Catch success rate for wild Pokemon varies \
 Wild Pokemon appearance/stats scale to the user’s progress\
 Wild Pokemon actions are randomized 
+Saving and loading game progress
 
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
