@@ -34,7 +34,6 @@ Saving and loading game progress
 ![Screenshot 2024-11-02 204017](https://github.com/user-attachments/assets/3b596527-10be-44b9-8d41-2fa89015d570)
 
 ### Screen Layouts
-> Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
 ![IMG_A6B44891A8E4-1](https://github.com/user-attachments/assets/9a935f5b-d6da-4eb7-ab73-099cdcf5fc3f)
 
@@ -42,38 +41,52 @@ This is the first screen the user will see, which displays the name of the game 
 
 ![Screenshot 2024-11-02 210621](https://github.com/user-attachments/assets/3e99b9d4-cc8b-4bc5-9572-50fbaae5f892)
 
+This screen provides the user with 5 main options. The user can choose to (1) go to the Inventory screen, (2) the Store screen, or (3) search for Pokemon which leads to the Battle Menu Screen. The user can also (4) save their current progress to the load file or (5) log the user out by exiting the program and returning to the initial screen.
 
 ![Screenshot 2024-11-02 210642](https://github.com/user-attachments/assets/c9b35dbd-e232-4c3c-bfbc-cbfc8c9a8741)
 
+This screen allows the user to (1) view the Pokemon they have in storage/team, (2) view the items they own, or (3) go back to the previous Menu screen.
 
 ![Screenshot 2024-11-02 210644](https://github.com/user-attachments/assets/6fba26e6-01c3-49e5-9327-ddbb761e1fa2)
 
+This screen displays the Pokemon they have in storage, and the user can (1) change the pokemon they have in their current battle team, or (2) go back to the previous Inventory screen.
 
-![Screenshot 2024-11-02 210725](https://github.com/user-attachments/assets/d315b191-46fc-4265-ad53-43342892fe17)
-
-
-![Screenshot 2024-11-02 210707](https://github.com/user-attachments/assets/14427a8e-2e99-401f-be22-3da605c57e41)
+![Screenshot 2024-11-02 213041](https://github.com/user-attachments/assets/c88e551e-d16e-4613-839d-c36897f83c6a)
 
 
-![Screenshot 2024-11-02 210704](https://github.com/user-attachments/assets/85bd47f3-0c8b-4d6a-9d77-f35b1f3b954a)
+This screen displays the items that the user has, and the user can (1) go back to the previous View Pokemon in PC screen.
 
+![Screenshot 2024-11-02 213049](https://github.com/user-attachments/assets/c45a1262-82f1-46d6-b748-9d0670192663)
 
-![Screenshot 2024-11-02 210702](https://github.com/user-attachments/assets/e5dc2edc-5231-4302-abc0-fe000ae3aeb4)
+This screen will show the user all the different items the user can purchase (ex. Pokeball, revive, etc.) and what the user balance is. There is also an option to exit the store ((5) Back) if the user is done shopping.
 
+![Screenshot 2024-11-02 210654](https://github.com/user-attachments/assets/26872757-34c0-425e-a2c3-a2a5997aeec6)
 
-![Screenshot 2024-11-02 210659](https://github.com/user-attachments/assets/6e1c0bc3-1bf3-43a5-bda6-9c7388a1abd7)
+This screen will be displayed when the user searches for new Pokemon and enters a battle. It will give options for the user to choose from like view all the items the trainer has, edit the trainer’s Pokemon team, view the movesets their Pokemon has (attack, defense, etc..) and an option to flee the battle if the user is not ready to battle. 
 
+![Screenshot 2024-11-02 213623](https://github.com/user-attachments/assets/5a49f198-33dc-41bd-9860-41bff8fb5242)
 
-![Screenshot 2024-11-02 210657](https://github.com/user-attachments/assets/7e312b11-efd4-4dd5-a58d-c5945042fd8d)
+This screen displays the items that the user has, and the user can use number inputs to choose the item they want to use. The number input after the last item the user owns will always be the back button, which allows the user to go back to the previous Battle Menu screen.
 
+![Screenshot 2024-11-02 210659](https://github.com/user-attachments/assets/addb9d87-1199-44fd-9069-a3e0dde082cf)
 
-![Screenshot 2024-11-02 210654](https://github.com/user-attachments/assets/01dadae7-8310-43b9-b26d-54751183afb9)
+This screen will show the user what Pokemon they have on their team and the option to swap their current Pokemon in battle with another Pokemon on their team.
 
+![Screenshot 2024-11-02 210702](https://github.com/user-attachments/assets/210ac487-f867-4343-9a83-34296a8b3630)
 
-![Screenshot 2024-11-02 210651](https://github.com/user-attachments/assets/6b165194-e9e2-4124-8d99-71a947e9a5af)
+This screen will display all the moves the trainer’s Pokemon have (attack, defense, etc.) and the trainer can select a move to use in their battle to try to win. There is also an option to go back to the previous menu if the trainer does not want to use a moveset. 
 
+![Screenshot 2024-11-02 210704](https://github.com/user-attachments/assets/d22668c2-161f-40da-8149-4e1f8a1e2349)
+
+This screen will display the result of the user’s decision in the previous screen, such as using an item, attempting to catch the Wild Pokemon, swapping the active Pokemon for another in the team, using an attack/defense move, or attempting to flee. If the Wild Pokemon is alive, it will lead to the Wild Pokemon Move screen, but if it is dead, the program will send the user to the Menu screen.
+
+![Screenshot 2024-11-02 210707](https://github.com/user-attachments/assets/3bbb7508-2343-4223-ad45-54b21c0472c5)
+
+This screen displays the Wild Pokemon’s current status and the decisions it makes, such as attacking/defending or fleeing the battle. If a move kills an Active Pokemon, the user will be prompted to choose an alive one, but if the Active Pokemon lives, the program will continue to the Battle Menu screen. If all user Pokemon are dead, the program will lead the user to the YOU LOST screen.
 
 ![IMG_DD41A826A89A-1](https://github.com/user-attachments/assets/6bfa4fef-3958-45d0-89a8-49a9b5a1695d)
+
+This is the screen the user will see if they lost a Pokemon battle. They are given an option (1) to use a revive item to revive their Pokemon or to (2) continue battling or give up on the battle and receive a penalty.
 
 
 ## Class Diagram
