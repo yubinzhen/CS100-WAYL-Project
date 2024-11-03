@@ -29,7 +29,7 @@ Wild Pokemon appearance/stats scale to the user’s progress\
 Wild Pokemon actions are randomized 
 Saving and loading game progress
 
-## User Interface Specification
+## User Navigation Diagram
 
 ![Screenshot 2024-11-02 204017](https://github.com/user-attachments/assets/3b596527-10be-44b9-8d41-2fa89015d570)
 
