@@ -36,6 +36,45 @@ Saving and loading game progress
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
+![Screenshot 2024-11-02 210501](https://github.com/user-attachments/assets/8033dc19-5aea-4165-9fea-7884ab57d586)
+
+
+![Screenshot 2024-11-02 210621](https://github.com/user-attachments/assets/3e99b9d4-cc8b-4bc5-9572-50fbaae5f892)
+
+
+![Screenshot 2024-11-02 210642](https://github.com/user-attachments/assets/c9b35dbd-e232-4c3c-bfbc-cbfc8c9a8741)
+
+
+![Screenshot 2024-11-02 210644](https://github.com/user-attachments/assets/6fba26e6-01c3-49e5-9327-ddbb761e1fa2)
+
+
+![Screenshot 2024-11-02 210725](https://github.com/user-attachments/assets/d315b191-46fc-4265-ad53-43342892fe17)
+
+
+![Screenshot 2024-11-02 210707](https://github.com/user-attachments/assets/14427a8e-2e99-401f-be22-3da605c57e41)
+
+
+![Screenshot 2024-11-02 210704](https://github.com/user-attachments/assets/85bd47f3-0c8b-4d6a-9d77-f35b1f3b954a)
+
+
+![Screenshot 2024-11-02 210702](https://github.com/user-attachments/assets/e5dc2edc-5231-4302-abc0-fe000ae3aeb4)
+
+
+![Screenshot 2024-11-02 210659](https://github.com/user-attachments/assets/6e1c0bc3-1bf3-43a5-bda6-9c7388a1abd7)
+
+
+![Screenshot 2024-11-02 210657](https://github.com/user-attachments/assets/7e312b11-efd4-4dd5-a58d-c5945042fd8d)
+
+
+![Screenshot 2024-11-02 210654](https://github.com/user-attachments/assets/01dadae7-8310-43b9-b26d-54751183afb9)
+
+
+![Screenshot 2024-11-02 210651](https://github.com/user-attachments/assets/6b165194-e9e2-4124-8d99-71a947e9a5af)
+
+
+![Screenshot 2024-11-02 210648](https://github.com/user-attachments/assets/61a5542d-7fcb-4932-bc9b-14b5a36f2baf)
+
+
 ## Class Diagram
 * Main: Manages the game session, linking the Player and WildPokemon instances. 
 * Player: Manages the player's team, money, and experience, as well as interactions with the Inventory.
