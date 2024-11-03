@@ -90,6 +90,8 @@ This is the screen the user will see if they lost a Pokemon battle. They are giv
 
 
 ## Class Diagram
+![image](https://github.com/user-attachments/assets/9db3857f-9e43-4041-b6bb-fc97e9bd1a4a)
+
 * Main: Manages the game session, linking the Player and WildPokemon instances. 
 * Player: Manages the player's team, money, and experience, as well as interactions with the Inventory.
 * Pokemon: Represents basic Pokémon attributes and actions.
@@ -98,7 +100,6 @@ This is the screen the user will see if they lost a Pokemon battle. They are giv
 * Battle: Manages the battle flow, handling player actions and random wild Pokémon responses.
 * Inventory: Manages items the player has collected and allows item use.
 * Item: Represents each item in the game, with methods to apply its effect to a Pokemon.
- ![image](https://github.com/user-attachments/assets/41c1cda3-9db1-4dc7-8b3c-5bf889e18830)
 
 
 
