@@ -57,7 +57,8 @@ Saving and loading game progress
 * Battle: Manages the battle flow, handling player actions and random wild Pokémon responses.
 * Inventory: Manages items the player has collected and allows item use.
 * Item: Represents each item in the game, with methods to apply its effect to a Pokemon.
- ![image](https://github.com/user-attachments/assets/d458ed49-b744-405d-8a4a-c97ef9f2961b)
+ ![image](https://github.com/user-attachments/assets/41c1cda3-9db1-4dc7-8b3c-5bf889e18830)
+
 
 
  > ## Phase III
