@@ -37,6 +37,7 @@ Saving and loading game progress
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
 ![Screenshot 2024-11-02 210501](https://github.com/user-attachments/assets/8033dc19-5aea-4165-9fea-7884ab57d586)
+
 This is the first screen the user will see, which displays the name of the game and two options (1)Load Game and (2)Save Game. If the user inputs "1", the program will load the user's progress if correctly saved. If the user inputs "2", the program will overwrite the user's load file. Either option will lead to the Menu.
 
 ![Screenshot 2024-11-02 210621](https://github.com/user-attachments/assets/3e99b9d4-cc8b-4bc5-9572-50fbaae5f892)
