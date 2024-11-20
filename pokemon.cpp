@@ -227,7 +227,8 @@ bool Pokemon::isTypeEffective(PokemonType attacker, PokemonType defender) {
         (attacker == PokemonType::Psychic && defender == PokemonType::Psychic) ||
         (attacker == PokemonType::Bug && (defender == PokemonType::Fire || defender == PokemonType::Fighting || defender == PokemonType::Poison || defender == PokemonType::Flying || defender == PokemonType::Ghost)) ||
         (attacker == PokemonType::Rock && (defender == PokemonType::Fighting || defender == PokemonType::Ground)) ||
-        (attacker == PokemonType::Ghost && defender == PokemonType::Normal)) {
+        (attacker == PokemonType::Ghost && defender == PokemonType::Normal) || 
+        (attacker == PokemonType::Normal && defender == PokemonType::Rock)) {
         return false;
     }
 
