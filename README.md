@@ -90,7 +90,8 @@ This is the screen the user will see if they lost a Pokemon battle. They are giv
 
 
 ## Class Diagram
-![image](https://github.com/user-attachments/assets/9db3857f-9e43-4041-b6bb-fc97e9bd1a4a)
+![image](https://github.com/user-attachments/assets/6de4594c-5b58-4d0c-af86-a8dc522da721)
+
 
 * Main: Manages the game session, linking the Player and WildPokemon instances. 
 * Player: Manages the player's team, money, and experience, as well as interactions with the Inventory.
