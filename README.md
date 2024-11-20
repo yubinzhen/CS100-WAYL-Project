@@ -90,7 +90,7 @@ This is the screen the user will see if they lost a Pokemon battle. They are giv
 
 
 ## Class Diagram
-![image](https://github.com/user-attachments/assets/6de4594c-5b58-4d0c-af86-a8dc522da721)
+![image](https://github.com/user-attachments/assets/02aad8ec-8b03-4a85-9e06-62f4c2faa430)
 
 
 * Main: Manages the game session, linking the Player and WildPokemon instances. 
