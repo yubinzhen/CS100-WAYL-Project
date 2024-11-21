@@ -2,14 +2,14 @@
 #include <iostream>
 #include <string>
 #include "Item.h"
-#include "StandardBall.h"
-#include "GreatBall.h"
-#include "UltraBall.h"
-#include "StandardPotion.h"
-#include "SuperPotion.h"
-#include "HyperPotion.h"
-#include "StandardRevive.h"
-#include "MaxRevive.h"
+#include "Pokeballs/StandardBall.h"
+#include "Pokeballs/GreatBall.h"
+#include "Pokeballs/UltraBall.h"
+#include "Potions/StandardPotion.h"
+#include "Potions/SuperPotion.h"
+#include "Potions/HyperPotion.h"
+#include "Revives/StandardRevive.h"
+#include "Revives/MaxRevive.h"
 
 
 using namespace std;
