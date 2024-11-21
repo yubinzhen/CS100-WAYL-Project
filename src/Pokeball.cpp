@@ -7,13 +7,12 @@ Pokeball::Pokeball(string n, int p, string desc, double cMultiplyer) {
     catchMultiplyer = cMultiplyer;
 }
 
-void Pokeball::displayInformation() override
+void Pokeball::displayInformation()
 {
     cout << "Name: " << name << endl;
     cout << "Description: " << description << endl;
     cout << "Catch Multiplyer: " << catchMultiplyer << "x" << endl;
     cout << "Price: " << price << "¥" << endl;
-    cout << "Current Amount: " << amount << endl;
 } 
 
 double Pokeball::getCatchMultiplyer()

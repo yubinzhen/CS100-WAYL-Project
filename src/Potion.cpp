@@ -1,6 +1,6 @@
 #include "../header/Potions/Potion.h"
 
-Potion::Pokeball(string n, int p, string desc, int rValue) 
+Potion::Potion(string n, int p, string desc, int rValue) 
 {
     name = n;
     price = p;
@@ -8,13 +8,12 @@ Potion::Pokeball(string n, int p, string desc, int rValue)
     recoveryValue = rValue;
 }
 
-void Potion::displayInformation() override
+void Potion::displayInformation()
 {
     cout << "Name: " << name << endl;
     cout << "Description: " << description << endl;
     cout << "Recovery Value: " << recoveryValue << endl;
     cout << "Price: " << price << "¥" << endl;
-    cout << "Current Amount: " << amount << endl;
 } 
 
 int Potion::getRecoveryValue()

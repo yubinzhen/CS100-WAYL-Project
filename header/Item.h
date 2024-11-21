@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <sstream>
 #include <iostream>
 
 using namespace std;
@@ -17,7 +18,7 @@ class Item
         string getName();
         int getPrice();
         void addAmount(int n);
-        void sellAmount();
+        void sellAmount(int n);
         int getAmount();
         string getDescription();
 };

@@ -15,7 +15,7 @@ void Item::addAmount(int n)
     amount += n;
 }
 
-void Item::sellAmount()
+void Item::sellAmount(int n)
 {
     amount -= n;
 }
