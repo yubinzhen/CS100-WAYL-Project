@@ -7,26 +7,10 @@ using namespace std;
 class Pokeball : public Item
 {
     protected:
-        double catchRate;
+        double catchMultiplyer;
 
     public:
-        Pokeball(string n, int p, string desc, double cRate) {
-            name = n;
-            price = p;
-            description = desc;
-            catchRate = cRate;
-        }
-
-        void displayInformation() override
-        {
-            cout << "Name: " << name << endl;
-            cout << "Description: " << description << endl;
-            cout << "Catch Rate: " << catchRate << endl;
-            cout << "Price: " << price << "¥" << endl;
-        } 
-
-        double getCatchRate()
-        {
-            return catchRate;
-        }
+        Pokeball(string n, int p, string desc, double cMultiplyer);
+        void displayInformation() override;
+        double getCatchMultiplyer();
 };

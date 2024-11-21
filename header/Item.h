@@ -9,22 +9,15 @@ class Item
     protected:
         string name;
         int price;
+        int amount = 0;
         string description;
 
     public:
         virtual void displayInformation() = 0;
-        string getName()
-        {
-            return name;
-        }
-
-        int getPrice()
-        {
-            return price;
-        }
-
-        string getDescription()
-        {
-            return description; 
-        }
+        string getName();
+        int getPrice();
+        void addAmount(int n);
+        void sellAmount();
+        int getAmount();
+        string getDescription();
 };
