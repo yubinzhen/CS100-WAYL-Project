@@ -1,4 +1,4 @@
-#include "../header/Inventory.h"
+#include "../headerItemAndInventory/Inventory.h"
 
 Inventory::~Inventory()
 {

@@ -1,4 +1,4 @@
-#include "../header/Pokeballs/Pokeball.h"
+#include "../headerItemAndInventory/Pokeballs/Pokeball.h"
 
 Pokeball::Pokeball(string n, int p, string desc, double cMultiplyer) {
     name = n;

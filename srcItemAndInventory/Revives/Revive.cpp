@@ -1,4 +1,4 @@
-#include "../header/Revives/Revive.h"
+#include "../headerItemAndInventory/Revives/Revive.h"
 
 Revive::Revive(string n, int p, string desc, double rMultiplyer) 
 {

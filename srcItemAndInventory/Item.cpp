@@ -1,4 +1,4 @@
-#include "../header/Item.h"
+#include "../headerItemAndInventory/Item.h"
 
 string Item::getName()
 {
