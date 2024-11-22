@@ -10,12 +10,15 @@ class Pokemon
         PokemonSpecies species;
         PokemonType type;
         int hp;
-        int attack;
+        int damage;
+        int defence;
+        Attack move1;
+        Attack monve2;
     public:
-        Pokemon(PokemonSpecies sp, PokemonType t, int hpVal, int atkVal): species(sp), type(t), hp(hpVal), attack(atkVal){}
+        Pokemon(PokemonSpecies sp, PokemonType t, int hpVal, int dmgVal): species(sp), type(t), hp(hpVal), damage(dmgVal){}
         void displayInfo();
-        string speciesToString(PokemonSpecies species);
-        string typeToString(PokemonType type);
+        static string speciesToString(PokemonSpecies species);
+        static string typeToString(PokemonType type);
         void attack(PokemonSpecies attacker, PokemonSpecies defender);
         bool isTypeEffective(PokemonType attacker, PokemonType defender);
 };

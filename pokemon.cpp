@@ -181,7 +181,7 @@ void Pokemon::displayInfo() {
         cout << "Species: " << speciesToString(species)
                   << "\nType: " << typeToString(type)
                   << "\nHP: " << hp
-                  << "\nAttack: " << attack << "\n";
+                  << "\nAttack: " << damage << "\n";
 }
 
 void Pokemon::attack(PokemonSpecies attacker, PokemonSpecies defender) {
