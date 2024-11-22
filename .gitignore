@@ -1,8 +1,0 @@
-# Ignore Google Test directory
-/googletest/
-
-# Ignore CMakeLists.txt
-CMakeLists.txt
-
-# Ignore .gitmodules file
-.gitmodules
