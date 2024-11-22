@@ -3,3 +3,5 @@ CMakeLists.txt
 /googletest/
 
 .gitmodules
+
+Tests/
