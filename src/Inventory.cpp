@@ -60,9 +60,12 @@ void Inventory::viewMyItems()
     for (int i = 0; i < items.size(); ++i)
     {
         cout << "(" << i + 1 << ") Name: " << items.at(i)->getName() << endl;
-        cout << "    Amount: " << items.at(i)->getAmount() << endl << endl;
+        cout << "    Amount: " << items.at(i)->getAmount() << endl;
+        if (i != items.size() - 1)
+        {
+            cout << endl;
+        }
     }
-    cout << endl;
 }
 
 void Inventory::storeItems()
@@ -81,6 +84,7 @@ void Inventory::storeItems()
 void Inventory::buyItem()
 {
     int i = 0;
+    int amount = 0;
     bool flag = true;
 
     while (flag)
@@ -109,17 +113,32 @@ void Inventory::buyItem()
         }
         else
         {
-            if (items.at(i)->getPrice() > money)
+            cout << "Enter amount: ";
+            cin >> amount;
+
+            while (cin.fail() || amount < 1)
+            {
+                cout << "Invalid amount. Try again: ";
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin >> i;
+                --i;
+                cout << endl;
+            }
+
+            if (items.at(i)->getPrice() * amount > money)
             {
                 cout << "Insufficient funds." << endl << endl;
             }
+
             else
             {
-                items.at(i)->addAmount(1);
-                money -= items.at(i)->getPrice();
-                cout << "Item has been added!" << endl << endl;
+                items.at(i)->addAmount(amount);
+                money -= items.at(i)->getPrice() * amount;
+                cout << "Item(s) added!" << endl << endl;
             }
         }
+
         cout << "(1) Purchase another item" << endl;
         cout << "(2) Go Back" << endl;
         cout << "Select an option: ";
@@ -147,6 +166,7 @@ void Inventory::buyItem()
 void Inventory::sellItem()
 {
     int i = 0;
+    int amount = 0;
     bool flag = true;
 
     while (flag)
@@ -176,15 +196,28 @@ void Inventory::sellItem()
         }
         else
         {
-            if (items.at(i)->getAmount() == 0)
+            cout << "Enter amount: ";
+            cin >> amount;
+
+            while (cin.fail() || amount < 1)
+            {
+                cout << "Invalid amount. Try again: ";
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin >> i;
+                --i;
+                cout << endl;
+            }
+
+            if (items.at(i)->getAmount() < amount)
             {
                 cout << "Insufficient amount." << endl << endl;
             }
             else
             {
-                items.at(i)->sellAmount(1);
-                money += items.at(i)->getPrice() / 2;
-                cout << "Item has been sold." << endl << endl;
+                items.at(i)->sellAmount(amount);
+                money += (items.at(i)->getPrice() / 2) * amount;
+                cout << "Item(s) sold." << endl << endl;
             }
         } 
         cout << "(1) Sell another item" << endl;
