@@ -12,7 +12,6 @@
 #include "Revives/StandardRevive.h"
 #include "Revives/MaxRevive.h"
 
-
 using namespace std;
 
 class Inventory
