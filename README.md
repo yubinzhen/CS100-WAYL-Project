@@ -99,8 +99,9 @@ This is the screen the user will see if they lost a Pokemon battle. They are giv
 * Attack: Represents each attack for Pokemon. Each Pokemon has four abilities. 
 * WildPokemon: Extends Pokemon with scaling and random action capabilities.
 * Battle: Manages the battle flow, handling player actions and random wild Pokémon responses.
-* Inventory: Manages items the player has collected and allows item use.
+* Inventory: Manages items the player has collected and allows item use as well as purchase and sell items.
 * Item: Represents each item in the game, with methods to apply its effect to a Pokemon.
+* PC: Manages the player's Pokemon and team.
 
 
 
