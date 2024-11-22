@@ -10,9 +10,9 @@ Pokeball::Pokeball(string n, int p, string desc, double cMultiplyer) {
 void Pokeball::displayInformation()
 {
     cout << "Name: " << name << endl;
-    cout << "Description: " << description << endl;
-    cout << "Catch Multiplyer: " << catchMultiplyer << "x" << endl;
-    cout << "Price: " << price << "¥" << endl;
+    cout << "    Description: " << description << endl;
+    cout << "    Catch Multiplyer: " << catchMultiplyer << "x" << endl;
+    cout << "    Price: " << price << "¥" << endl;
 } 
 
 double Pokeball::getCatchMultiplyer()

@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <limits>
 #include "Item.h"
 #include "Pokeballs/StandardBall.h"
 #include "Pokeballs/GreatBall.h"
@@ -25,8 +26,10 @@ class Inventory
         void viewMyItems();
         void store();
         void storeItems();
-        void addItem(Item* newItem);
+        void addItem(Item* );
         void buyItem();
         void sellItem();
         void accessPC();
+        void addMoney(int );
+        int getMoney();
 };

@@ -11,9 +11,9 @@ Potion::Potion(string n, int p, string desc, int rValue)
 void Potion::displayInformation()
 {
     cout << "Name: " << name << endl;
-    cout << "Description: " << description << endl;
-    cout << "Recovery Value: " << recoveryValue << endl;
-    cout << "Price: " << price << "¥" << endl;
+    cout << "    Description: " << description << endl;
+    cout << "    Recovery Value: " << recoveryValue << endl;
+    cout << "    Price: " << price << "¥" << endl;
 } 
 
 int Potion::getRecoveryValue()

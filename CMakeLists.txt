@@ -6,8 +6,8 @@ include_directories(${CMAKE_SOURCE_DIR}/header)
 
 add_subdirectory(googletest)
 
-add_executable(testInventoryAndItems
-    tests/test.cpp
+add_executable(testInventory
+    InventoryTests/test.cpp
     src/Inventory.cpp
     src/Item.cpp
     src/Pokeballs/Pokeball.cpp
@@ -24,4 +24,4 @@ add_executable(testInventoryAndItems
 )
 
 
-target_link_libraries(testInventoryAndItems gtest gtest_main)
+target_link_libraries(testInventory gtest gtest_main)

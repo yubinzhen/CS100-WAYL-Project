@@ -1,4 +1,4 @@
-#include "../Pokeballs/GreatBall.h"
+#include "../header/Pokeballs/GreatBall.h"
 
 GreatBall::GreatBall()
-    : Pokeball("Great Ball", 600, "The Great Ball is a Poké Ball that provides a higher chance of successfully catching Pokémon compared to the standard Poké Ball.", 1.5) {} 
+    : Pokeball("Great Ball", 600, "The Great Ball provides a higher chance of catching Pokémon compared to the Poké Ball.", 1.5) {} 

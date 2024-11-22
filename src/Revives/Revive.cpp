@@ -11,9 +11,9 @@ Revive::Revive(string n, int p, string desc, double rMultiplyer)
 void Revive::displayInformation()
 {
     cout << "Name: " << name << endl;
-    cout << "Description: " << description << endl;
-    cout << "Revive Multiplyer: " << reviveMultiplyer << "x" << endl;
-    cout << "Price: " << price << "¥" << endl;
+    cout << "    Description: " << description << endl;
+    cout << "    Revive Multiplyer: " << reviveMultiplyer << "x" << endl;
+    cout << "    Price: " << price << "¥" << endl;
 } 
 
 double Revive::getReviveMultiplyer()
