@@ -31,7 +31,8 @@ Saving and loading game progress
 
 ## User Navigation Diagram
 
-![Screenshot 2024-11-02 204017](https://github.com/user-attachments/assets/3b596527-10be-44b9-8d41-2fa89015d570)
+![UI Navigation Diagram (2)](https://github.com/user-attachments/assets/2a2a3c0d-61b4-437e-95d1-6f6e06da0a94)
+
 
 ### Screen Layouts
 
