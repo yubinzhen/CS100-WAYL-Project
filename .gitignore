@@ -5,3 +5,15 @@ CMakeLists.txt
 .gitmodules
 
 Tests/
+
+CMakeFiles/*
+
+Makefile
+
+cmake_install.cmake_install
+
+lib/*
+
+testInventory
+
+bin/*

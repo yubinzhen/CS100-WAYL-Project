@@ -1,4 +1,6 @@
-#pragma once
+#ifndef ITEM_H
+#define ITEM_H
+
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -22,3 +24,5 @@ class Item
         int getAmount();
         string getDescription();
 };
+
+#endif
