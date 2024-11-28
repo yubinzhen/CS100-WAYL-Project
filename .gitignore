@@ -17,3 +17,7 @@ lib/*
 testInventory
 
 bin/*
+
+CMakeCache.txt
+
+cmake_install.cmake
