@@ -1,4 +1,4 @@
-#include "../headerItemAndInventory/Inventory.h"
+#include "../header/Inventory.h"
 #include <iostream>
 #include <limits>
 using namespace std;

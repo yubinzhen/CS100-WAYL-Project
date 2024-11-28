@@ -1,4 +1,4 @@
-#include "../headerItemAndInventory/Potions/Potion.h"
+#include "../../header/Potions/Potion.h"
 
 Potion::Potion(string n, int p, string desc, int rValue) 
 {
