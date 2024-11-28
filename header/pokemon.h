@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
-#include "pokemonType.cpp"
-#include "pokemonSpecies.cpp"
+#include "../src/pokemonType.cpp"
+#include "../src/pokemonSpecies.cpp"
+#include "attack.h"
 using namespace std;
 
 class Pokemon
@@ -13,7 +14,8 @@ class Pokemon
         int damage;
         int defence;
         Attack move1;
-        Attack monve2;
+        Attack move2;
+        Attack move3;
     public:
         Pokemon(PokemonSpecies sp, PokemonType t, int hpVal, int dmgVal): species(sp), type(t), hp(hpVal), damage(dmgVal){}
         void displayInfo();

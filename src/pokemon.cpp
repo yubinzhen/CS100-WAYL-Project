@@ -1,4 +1,4 @@
-#include "pokemon.h"
+#include "../header/pokemon.h"
 string Pokemon::speciesToString(PokemonSpecies species) {
     switch (species) {
         case PokemonSpecies::Bulbasaur:   return "Bulbasaur";
@@ -162,17 +162,6 @@ string Pokemon::typeToString(PokemonType type) {
         case PokemonType::Fire:     return "Fire";
         case PokemonType::Water:    return "Water";
         case PokemonType::Grass:    return "Grass";
-        case PokemonType::Electric: return "Electric";
-        case PokemonType::Ice:      return "Ice";
-        case PokemonType::Fighting: return "Fighting";
-        case PokemonType::Poison:   return "Poison";
-        case PokemonType::Ground:   return "Ground";
-        case PokemonType::Flying:   return "Flying";
-        case PokemonType::Psychic:  return "Psychic";
-        case PokemonType::Bug:      return "Bug";
-        case PokemonType::Rock:     return "Rock";
-        case PokemonType::Ghost:    return "Ghost";
-        case PokemonType::Dragon:   return "Dragon";
         default: return "Unknown";
     }
 }
@@ -189,49 +178,6 @@ void Pokemon::attack(PokemonSpecies attacker, PokemonSpecies defender) {
               << speciesToString(defender) << "!\n";
 }
 
-bool Pokemon::isTypeEffective(PokemonType attacker, PokemonType defender) {
-    if ((attacker == PokemonType::Normal && defender == PokemonType::Ghost) || 
-        (attacker == PokemonType::Ghost && defender == PokemonType::Normal)) {
-        // Immune relationships
-        return false;
-    }
+bool Pokemon::isTypeEffective(Attack attack, PokemonType defender) {
 
-    // Super effective relationships
-    if ((attacker == PokemonType::Fire && (defender == PokemonType::Grass || defender == PokemonType::Ice || defender == PokemonType::Bug)) ||
-        (attacker == PokemonType::Water && (defender == PokemonType::Fire || defender == PokemonType::Ground || defender == PokemonType::Rock)) ||
-        (attacker == PokemonType::Grass && (defender == PokemonType::Water || defender == PokemonType::Ground || defender == PokemonType::Rock)) ||
-        (attacker == PokemonType::Electric && (defender == PokemonType::Water || defender == PokemonType::Flying)) ||
-        (attacker == PokemonType::Ice && (defender == PokemonType::Grass || defender == PokemonType::Ground || defender == PokemonType::Flying || defender == PokemonType::Dragon)) ||
-        (attacker == PokemonType::Fighting && (defender == PokemonType::Normal || defender == PokemonType::Ice || defender == PokemonType::Rock)) ||
-        (attacker == PokemonType::Poison && (defender == PokemonType::Grass || defender == PokemonType::Bug)) ||
-        (attacker == PokemonType::Ground && (defender == PokemonType::Fire || defender == PokemonType::Electric || defender == PokemonType::Poison || defender == PokemonType::Rock)) ||
-        (attacker == PokemonType::Flying && (defender == PokemonType::Grass || defender == PokemonType::Fighting || defender == PokemonType::Bug)) ||
-        (attacker == PokemonType::Psychic && (defender == PokemonType::Fighting || defender == PokemonType::Poison)) ||
-        (attacker == PokemonType::Bug && (defender == PokemonType::Grass || defender == PokemonType::Psychic)) ||
-        (attacker == PokemonType::Rock && (defender == PokemonType::Fire || defender == PokemonType::Ice || defender == PokemonType::Flying || defender == PokemonType::Bug)) ||
-        (attacker == PokemonType::Ghost && (defender == PokemonType::Ghost || defender == PokemonType::Psychic)) ||
-        (attacker == PokemonType::Dragon && defender == PokemonType::Dragon)) {
-        return true;
-    }
-
-    // Not very effective relationships
-    if ((attacker == PokemonType::Fire && (defender == PokemonType::Fire || defender == PokemonType::Water || defender == PokemonType::Rock || defender == PokemonType::Dragon)) ||
-        (attacker == PokemonType::Water && (defender == PokemonType::Water || defender == PokemonType::Grass || defender == PokemonType::Dragon)) ||
-        (attacker == PokemonType::Grass && (defender == PokemonType::Grass || defender == PokemonType::Fire || defender == PokemonType::Poison || defender == PokemonType::Flying || defender == PokemonType::Bug || defender == PokemonType::Dragon)) ||
-        (attacker == PokemonType::Electric && (defender == PokemonType::Electric || defender == PokemonType::Grass || defender == PokemonType::Dragon)) ||
-        (attacker == PokemonType::Ice && (defender == PokemonType::Fire || defender == PokemonType::Water || defender == PokemonType::Ice)) ||
-        (attacker == PokemonType::Fighting && (defender == PokemonType::Poison || defender == PokemonType::Flying || defender == PokemonType::Psychic || defender == PokemonType::Bug)) ||
-        (attacker == PokemonType::Poison && (defender == PokemonType::Poison || defender == PokemonType::Ground || defender == PokemonType::Rock || defender == PokemonType::Ghost)) ||
-        (attacker == PokemonType::Ground && (defender == PokemonType::Grass || defender == PokemonType::Bug)) ||
-        (attacker == PokemonType::Flying && (defender == PokemonType::Electric || defender == PokemonType::Rock)) ||
-        (attacker == PokemonType::Psychic && defender == PokemonType::Psychic) ||
-        (attacker == PokemonType::Bug && (defender == PokemonType::Fire || defender == PokemonType::Fighting || defender == PokemonType::Poison || defender == PokemonType::Flying || defender == PokemonType::Ghost)) ||
-        (attacker == PokemonType::Rock && (defender == PokemonType::Fighting || defender == PokemonType::Ground)) ||
-        (attacker == PokemonType::Ghost && defender == PokemonType::Normal) || 
-        (attacker == PokemonType::Normal && defender == PokemonType::Rock)) {
-        return false;
-    }
-
-    // Default: Not a super effective or immune relationship
-    return false;
 }
