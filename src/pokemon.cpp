@@ -73,6 +73,14 @@ void Pokemon::displayInfo() {
                   << "\nHP: " << calculateHP(level, baseHP)
                   << "\nBase Attack: " << baseAttack
                   << "\nBase Defense: " << baseDefense << "\n";
+<<<<<<< HEAD
+=======
+}
+
+void Pokemon::attack(PokemonSpecies attacker, PokemonSpecies defender) {
+    cout << speciesToString(attacker) << " attacks " 
+              << speciesToString(defender) << "!\n";
+>>>>>>> 4a261178c02effd62e5a038b7c83955ed8359730
 }
 
 bool Pokemon::isTypeEffective(PokemonType attacker, PokemonType defender) {

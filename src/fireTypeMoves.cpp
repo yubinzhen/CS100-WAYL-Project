@@ -3,10 +3,5 @@ enum class fireTypeMoves{
     Flamethrower, 
     FireBlast, 
     Ember, 
-    FirePunch, 
-    Smokescreen, 
-    Rage, 
-    Agility, 
-    Growl, 
-    Leer
+    FirePunch
 };
