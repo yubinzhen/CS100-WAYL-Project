@@ -63,18 +63,16 @@ string Pokemon::typeToString(PokemonType type) {
     }
 }
 
+int Pokemon::getLevel() const{
+    return level;
+}
+
 void Pokemon::displayInfo() {
         cout << "Species: " << speciesToString(species)
                   << "\nType: " << typeToString(type)
                   << "\nHP: " << calculateHP(level, baseHP)
                   << "\nBase Attack: " << baseAttack
-                  << "\nBase Defense: " << baseDefense
-                  << "\nBase Speed: " << baseSpeed << "\n";
-}
-
-void Pokemon::attack(PokemonSpecies attacker, PokemonSpecies defender) {
-    cout << speciesToString(attacker) << " attacks " 
-              << speciesToString(defender) << "!\n";
+                  << "\nBase Defense: " << baseDefense << "\n";
 }
 
 bool Pokemon::isTypeEffective(PokemonType attacker, PokemonType defender) {
@@ -94,7 +92,15 @@ bool Pokemon::isTypeNotEffective(PokemonType attacker, PokemonType defender) {
     return false;
 }
 
-int Pokemon::calculateHP(int level, int hp){
+int Pokemon::calculateHP(int level, int baseHP) const{
     srand(time(0));
-    return 2*hp+rand()%31*level/100+level+10;
+    return (2*baseHP+rand()%31)*level/100+level+10;
+}
+int Pokemon::calculateAttack(int level, int baseAttack) const{
+    srand(time(0));
+    return (2*baseAttack+rand()%31)*level/100+5;
+}
+int Pokemon::calculateDefense(int level, int baseDefense) const{
+    srand(time(0));
+    return (2*baseDefense+rand()%31)*level/100+5;
 }

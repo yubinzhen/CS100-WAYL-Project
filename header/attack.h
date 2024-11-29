@@ -23,6 +23,8 @@ class Attack {
 
         bool getIsNormal() const;
         bool setIsNormal(bool normal);
+
+        void calculateDamage(Pokemon attacker, Pokemon defender) const;
 };
 
 #endif

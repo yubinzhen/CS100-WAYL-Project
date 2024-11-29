@@ -23,3 +23,7 @@ bool Attack::getIsNormal() const{
 bool Attack::setIsNormal(bool normal){
     this->isNormal = normal;
 }
+
+void Attack::calculateDamage(Pokemon attacker, Pokemon defender) const{
+    
+}
