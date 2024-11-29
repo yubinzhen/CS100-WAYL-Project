@@ -68,8 +68,7 @@ void Pokemon::displayInfo() {
                   << "\nType: " << typeToString(type)
                   << "\nHP: " << calculateHP(level, baseHP)
                   << "\nBase Attack: " << baseAttack
-                  << "\nBase Defense: " << baseDefense
-                  << "\nBase Speed: " << baseSpeed << "\n";
+                  << "\nBase Defense: " << baseDefense << "\n";
 }
 
 void Pokemon::attack(PokemonSpecies attacker, PokemonSpecies defender) {
