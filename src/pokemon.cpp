@@ -94,13 +94,13 @@ bool Pokemon::isTypeNotEffective(Pokemon defender) {
 
 int Pokemon::calculateHP() const{
     srand(time(0));
-    return (2*baseHP+rand()%31)*level/100+level+10;
+    return (2*baseHP+IV)*level/100+level+10;
 }
 int Pokemon::calculateAttack() const{
     srand(time(0));
-    return (2*baseAttack+rand()%31)*level/100+5;
+    return (2*baseAttack+IV)*level/100+5;
 }
 int Pokemon::calculateDefense() const{
     srand(time(0));
-    return (2*baseDefense+rand()%31)*level/100+5;
+    return (2*baseDefense+IV)*level/100+5;
 }

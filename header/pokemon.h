@@ -14,13 +14,14 @@ class Pokemon
         PokemonType type;
         int level;
         int baseHP;
+        int IV;
         int baseAttack;
         int baseDefense;
         Attack move1;
         Attack move2;
         Attack move3;
     public:
-        Pokemon(PokemonSpecies sp): species(sp){
+        Pokemon(PokemonSpecies sp): species(sp){//constructor for all pokemon
             level=1;
             switch (species) {
                 case PokemonSpecies::Bulbasaur:
@@ -317,18 +318,20 @@ class Pokemon
                     baseAttack=0;
                     baseDefense=0;
             }
+            srand(time(0));
+            IV=rand()%31;
         }
-        Pokemon(){
+        Pokemon(){//default constructor
             species=PokemonSpecies::none;
             type = PokemonType::Normal;
             baseHP=0;
             baseAttack=0;
             baseDefense=0;
         }
-        void displayInfo();
-        int calculateHP() const;
-        int calculateAttack() const;
-        int calculateDefense() const;
+        void displayInfo();//displays every attributes for each pokemon
+        int calculateHP() const;//calculates HP as the level goes up
+        int calculateAttack() const;//calculates Attack as the level goes up
+        int calculateDefense() const;//calculates Defense as the leve goes up
         int getLevel() const;
         static string speciesToString(PokemonSpecies species);
         static string typeToString(PokemonType type);

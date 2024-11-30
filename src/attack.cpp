@@ -1,8 +1,8 @@
 #include "../header/attack.h"
 #include <iostream>
 
-Attack::Attack() : name(moves::None), type(PokemonType::Normal), power(0) {}
-Attack::Attack(moves name, int power, PokemonType t){
+Attack::Attack() : name(moves::None), type(PokemonType::Normal), power(0) {} //default constructor
+Attack::Attack(moves name, int power, PokemonType t){//constructor for every moves
     switch (name) {
         case moves::FireSpin:
             type = PokemonType::Fire;
@@ -323,7 +323,7 @@ Attack::Attack(moves name, int power, PokemonType t){
     }
 }
 
-string Attack::getName() const {
+string Attack::getName() const {//use this function to get the name of the moves
     switch (name) {
         case moves::FireSpin: return "Fire Spin";
         case moves::Flamethrower: return "Flamethrower";
@@ -411,7 +411,7 @@ int Attack::getpower() const {
     return power;
 }
 
-int Attack::calculateDamage(Pokemon attacker, Pokemon defender) const{
+int Attack::calculateDamage(Pokemon attacker, Pokemon defender) const{//this is the actual damage that will do to the opponent
     int damage = ((2*attacker.getLevel()/5+2)*(power*attacker.calculateAttack()/defender.calculateDefense())/50+2);
     if(attacker.isTypeEffective(defender)){
         damage*=2;
@@ -426,7 +426,7 @@ int Attack::calculateDamage(Pokemon attacker, Pokemon defender) const{
     return damage*(85+rand()%30)/100;
 }
 
-void Attack::displayInfo() {
+void Attack::displayInfo() {//display the information for the move
         cout << "Move Name: " << getName()
                   << "\nPower: " << getpower() << "\n";
 }
