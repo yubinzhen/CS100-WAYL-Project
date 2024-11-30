@@ -271,8 +271,3 @@ void Inventory::addItem(Item* newItem)
 {
     cout << "Implement addItem()" << endl;
 }
-
-void Inventory::accessPC()
-{
-    cout << "Implement accessPC()" << endl;
-}

@@ -28,7 +28,6 @@ class Inventory
         void addItem(Item* );
         void buyItem();
         void sellItem();
-        void accessPC();
         void addMoney(int );
         int getMoney();
 };
