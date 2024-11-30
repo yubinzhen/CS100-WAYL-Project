@@ -5,6 +5,8 @@
 #include "attack.h"
 #include <cstdlib>
 #include <ctime>
+#include <map> 
+#include <algorithm>
 using namespace std;
 
 class Pokemon
@@ -17,11 +19,21 @@ class Pokemon
         int IV;
         int baseAttack;
         int baseDefense;
-        Attack move1;
-        Attack move2;
-        Attack move3;
+        Attack* move1;
+        Attack* move2;
+        Attack* move3;
+        static std::map<PokemonType, std::vector<moves>> availableMoves;
     public:
+        ~Pokemon(){
+            delete move1;
+            delete move2;
+            delete move3;
+        }
         Pokemon(PokemonSpecies sp): species(sp){//constructor for all pokemon
+            availableMoves= { {PokemonType::Fire, {moves::FireSpin, moves::Flamethrower, moves::FireBlast, moves::Ember, moves::FirePunch}}, 
+                            {PokemonType::Grass, {moves::Absorb, moves::LeechSeed, moves::MegaDrain, moves::PetalDance, moves::RazorLeaf, moves::SleepPowder, moves::SolarBeam, moves::Spore, moves::StunSpore, moves::VineWhip}}, 
+                            {PokemonType::Water, {moves::Clamp, moves::Crabhammer, moves::HydroPump, moves::Surf, moves::WaterGun, moves::Waterfall, moves::Withdraw}}, {PokemonType::Normal, {moves::Barrage, moves::Bide, moves::Bind, moves::BodySlam, moves::CometPunch, moves::Cut, moves::DefenseCurl, moves::DizzyPunch, moves::DoubleSlap, moves::DoubleEdge, moves::EggBomb, moves::Explosion, moves::FuryAttack, moves::FurySwipes, moves::Glare, moves::Growl, moves::Growth, moves::Guillotine, moves::Harden, moves::Headbutt, moves::HornAttack, moves::HornDrill, moves::HyperBeam, moves::HyperFang, moves::Leer, moves::LovelyKiss, moves::MegaKick, moves::MegaPunch, moves::Pound, moves::QuickAttack, moves::Rage, moves::RazorWind, moves::Recover, moves::Scratch, moves::Screech, moves::SelfDestruct, moves::Sharpen, moves::Sing, moves::SkullBash, moves::Slam, moves::Slash, moves::SoftBoiled, moves::SonicBoom, moves::SpikeCannon, moves::Splash, moves::Stomp, moves::Strength, moves::SuperFang, moves::Supersonic, moves::SwordsDance, moves::Tackle, moves::TailWhip, moves::TakeDown, moves::Thrash, moves::ViseGrip, moves::Wrap}}};
+
             level=1;
             switch (species) {
                 case PokemonSpecies::Bulbasaur:
@@ -320,6 +332,16 @@ class Pokemon
             }
             srand(time(0));
             IV=rand()%31;
+            vector<moves> selectedMoves;
+            if (type != PokemonType::Normal) {
+                selectedMoves.insert(selectedMoves.end(), availableMoves[type].begin(), availableMoves[type].end()); 
+            }
+            selectedMoves.insert(selectedMoves.end(), availableMoves[PokemonType::Normal].begin(), availableMoves[PokemonType::Normal].end());
+            random_shuffle(selectedMoves.begin(), selectedMoves.end()); 
+            move1 = new Attack(selectedMoves[0], 0, type); 
+            move2 = new Attack(selectedMoves[1], 0, type); 
+            move3 = new Attack(selectedMoves[2], 0, type); 
+
         }
         Pokemon(){//default constructor
             species=PokemonSpecies::none;
@@ -327,6 +349,9 @@ class Pokemon
             baseHP=0;
             baseAttack=0;
             baseDefense=0;
+            move1=nullptr;
+            move2=nullptr;
+            move3=nullptr;
         }
         void displayInfo();//displays every attributes for each pokemon
         int calculateHP() const;//calculates HP as the level goes up

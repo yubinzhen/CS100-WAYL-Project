@@ -13,6 +13,19 @@ class Attack {
         PokemonType type;
         int power;
     public:
+        ~Attack(){}
+        Attack& operator=(const Attack& other) {
+            if (this == &other) { // Check for self-assignment
+                return *this;
+            }
+
+            // Copy member variables
+            name = other.name;
+            type = other.type;
+            power = other.power;
+
+            return *this; // Return *this to allow chaining
+        }
         Attack();
         Attack(moves name, int power, PokemonType t);
         string getName() const;//get name of the moves
