@@ -318,13 +318,20 @@ class Pokemon
                     baseDefense=0;
             }
         }
+        Pokemon(){
+            species=PokemonSpecies::none;
+            type = PokemonType::Normal;
+            baseHP=0;
+            baseAttack=0;
+            baseDefense=0;
+        }
         void displayInfo();
-        int calculateHP(int level, int baseHP) const;
-        int calculateAttack(int level, int baseAttack) const;
-        int calculateDefense(int level, int baseDefense) const;
+        int calculateHP() const;
+        int calculateAttack() const;
+        int calculateDefense() const;
         int getLevel() const;
         static string speciesToString(PokemonSpecies species);
         static string typeToString(PokemonType type);
-        bool isTypeEffective(PokemonType attacker, PokemonType defender);
-        bool isTypeNotEffective(PokemonType attacker, PokemonType defender);
+        bool isTypeEffective(Pokemon defender);
+        bool isTypeNotEffective(Pokemon defender);
 };

@@ -1,4 +1,26 @@
-enum class normalTypeMoves {
+enum class moves {
+    FireSpin, 
+    Flamethrower, 
+    FireBlast, 
+    Ember, 
+    FirePunch,
+    Absorb,
+    LeechSeed,
+    MegaDrain,
+    PetalDance,
+    RazorLeaf,
+    SleepPowder,
+    SolarBeam,
+    Spore,
+    StunSpore,
+    VineWhip,
+    Clamp,
+    Crabhammer,
+    HydroPump,
+    Surf,
+    WaterGun,
+    Waterfall,
+    Withdraw,
     Barrage,
     Bide,
     Bind,
@@ -27,8 +49,6 @@ enum class normalTypeMoves {
     LovelyKiss,
     MegaKick,
     MegaPunch,
-    //Metronome
-    //Mimic
     Pound,
     QuickAttack,
     Rage,
@@ -55,7 +75,7 @@ enum class normalTypeMoves {
     TailWhip,
     TakeDown,
     Thrash,
-    //Tri Attack
     ViseGrip,
-    Wrap
+    Wrap,
+    None
 };

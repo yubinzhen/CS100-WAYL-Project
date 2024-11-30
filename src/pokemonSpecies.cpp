@@ -46,5 +46,6 @@ enum class PokemonSpecies {
     Tangela, 
     Gyarados, 
     Moltres, 
-    Snorlax
+    Snorlax,
+    none
 };

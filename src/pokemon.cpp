@@ -70,45 +70,37 @@ int Pokemon::getLevel() const{
 void Pokemon::displayInfo() {
         cout << "Species: " << speciesToString(species)
                   << "\nType: " << typeToString(type)
-                  << "\nHP: " << calculateHP(level, baseHP)
+                  << "\nHP: " << calculateHP()
                   << "\nBase Attack: " << baseAttack
                   << "\nBase Defense: " << baseDefense << "\n";
-<<<<<<< HEAD
-=======
 }
 
-void Pokemon::attack(PokemonSpecies attacker, PokemonSpecies defender) {
-    cout << speciesToString(attacker) << " attacks " 
-              << speciesToString(defender) << "!\n";
->>>>>>> 4a261178c02effd62e5a038b7c83955ed8359730
-}
-
-bool Pokemon::isTypeEffective(PokemonType attacker, PokemonType defender) {
+bool Pokemon::isTypeEffective(Pokemon defender) {
     // Super effective relationships
-    if ((attacker == PokemonType::Fire && defender == PokemonType::Grass) ||
-        (attacker == PokemonType::Water && defender == PokemonType::Fire) ||
-        (attacker == PokemonType::Grass && defender == PokemonType::Water))
+    if ((type == PokemonType::Fire && defender.type == PokemonType::Grass) ||
+        (type == PokemonType::Water && defender.type == PokemonType::Fire) ||
+        (type == PokemonType::Grass && defender.type == PokemonType::Water))
         return true;
     return false;
 }
-bool Pokemon::isTypeNotEffective(PokemonType attacker, PokemonType defender) {
+bool Pokemon::isTypeNotEffective(Pokemon defender) {
     // Not very effective relationships
-    if ((attacker == PokemonType::Fire && defender == PokemonType::Water) ||
-        (attacker == PokemonType::Water && defender == PokemonType::Grass) ||
-        (attacker == PokemonType::Grass && defender == PokemonType::Fire))
+    if ((type == PokemonType::Fire && defender.type == PokemonType::Water) ||
+        (type == PokemonType::Water && defender.type == PokemonType::Grass) ||
+        (type == PokemonType::Grass && defender.type == PokemonType::Fire))
         return true;
     return false;
 }
 
-int Pokemon::calculateHP(int level, int baseHP) const{
+int Pokemon::calculateHP() const{
     srand(time(0));
     return (2*baseHP+rand()%31)*level/100+level+10;
 }
-int Pokemon::calculateAttack(int level, int baseAttack) const{
+int Pokemon::calculateAttack() const{
     srand(time(0));
     return (2*baseAttack+rand()%31)*level/100+5;
 }
-int Pokemon::calculateDefense(int level, int baseDefense) const{
+int Pokemon::calculateDefense() const{
     srand(time(0));
     return (2*baseDefense+rand()%31)*level/100+5;
 }

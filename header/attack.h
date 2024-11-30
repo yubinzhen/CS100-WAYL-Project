@@ -3,28 +3,22 @@
 
 #include <string>
 #include "pokemon.h"
+#include "../src/moves.cpp"
 
 using std::string;
 
 class Attack {
     private:
-        string name;
-        double power;
-        bool isNormal;
+        moves name;
+        PokemonType type;
+        int power;
     public:
         Attack();
-        Attack(const string& name, int power, bool normal);
-
+        Attack(moves name, int power, PokemonType t);
         string getName() const;
-        string setName(const string& name);
-
         int getpower() const;
-        int setpower(int power);
-
-        bool getIsNormal() const;
-        bool setIsNormal(bool normal);
-
-        void calculateDamage(Pokemon attacker, Pokemon defender) const;
+        int calculateDamage(Pokemon attacker, Pokemon defender) const;
+        void displayInfo();
 };
 
 #endif
