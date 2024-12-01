@@ -19,7 +19,7 @@ class WildPokemon : public Pokemon{
             PokemonSpecies::Kangaskhan, PokemonSpecies::Tangela, PokemonSpecies::Gyarados,
             PokemonSpecies::Moltres, PokemonSpecies::Snorlax, PokemonSpecies::none
         };
-        WildPokemon();
+        WildPokemon(int area);
         int evaluateMoveEffectiveness();
     public:
         void wildPokemonMove();

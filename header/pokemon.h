@@ -49,6 +49,7 @@ class Pokemon
         int calculateAttack() const;//calculates Attack as the level goes up
         int calculateDefense() const;//calculates Defense as the leve goes up
         int getLevel() const;
+        void initializeStats(PokemonSpecies sp);
         static string speciesToString(PokemonSpecies species);
         static string typeToString(PokemonType type);
         bool isTypeEffective(Pokemon defender);
@@ -56,4 +57,12 @@ class Pokemon
         void addEXP(int val);
         void addLevel();
         int calculateEXP(Pokemon defeatedPokemon) const;
+    protected:
+        void setBaseHP(int val);
+        void setBaseAttack(int val);
+        void setBaseDefense(int val);
+        int getBaseHP();
+        int getBaseAttack();
+        int getBaseDefense();
+
 };

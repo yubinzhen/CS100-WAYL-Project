@@ -2,11 +2,27 @@
 Pokemon::Pokemon(PokemonSpecies sp): species(sp){//constructor for all pokemon
     availableMoves= { {PokemonType::Fire, {moves::FireSpin, moves::Flamethrower, moves::FireBlast, moves::Ember, moves::FirePunch}}, 
                     {PokemonType::Grass, {moves::Absorb, moves::LeechSeed, moves::MegaDrain, moves::PetalDance, moves::RazorLeaf, moves::SleepPowder, moves::SolarBeam, moves::Spore, moves::StunSpore, moves::VineWhip}}, 
-                    {PokemonType::Water, {moves::Clamp, moves::Crabhammer, moves::HydroPump, moves::Surf, moves::WaterGun, moves::Waterfall, moves::Withdraw}}, {PokemonType::Normal, {moves::Barrage, moves::Bide, moves::Bind, moves::BodySlam, moves::CometPunch, moves::Cut, moves::DefenseCurl, moves::DizzyPunch, moves::DoubleSlap, moves::DoubleEdge, moves::EggBomb, moves::Explosion, moves::FuryAttack, moves::FurySwipes, moves::Glare, moves::Growl, moves::Growth, moves::Guillotine, moves::Harden, moves::Headbutt, moves::HornAttack, moves::HornDrill, moves::HyperBeam, moves::HyperFang, moves::Leer, moves::LovelyKiss, moves::MegaKick, moves::MegaPunch, moves::Pound, moves::QuickAttack, moves::Rage, moves::RazorWind, moves::Recover, moves::Scratch, moves::Screech, moves::SelfDestruct, moves::Sharpen, moves::Sing, moves::SkullBash, moves::Slam, moves::Slash, moves::SoftBoiled, moves::SonicBoom, moves::SpikeCannon, moves::Splash, moves::Stomp, moves::Strength, moves::SuperFang, moves::Supersonic, moves::SwordsDance, moves::Tackle, moves::TailWhip, moves::TakeDown, moves::Thrash, moves::ViseGrip, moves::Wrap}}};
+                    {PokemonType::Water, {moves::Clamp, moves::Crabhammer, moves::HydroPump, moves::Surf, moves::WaterGun, moves::Waterfall, moves::Withdraw}}, 
+                    {PokemonType::Normal, {moves::Barrage, moves::Bide, moves::Bind, moves::BodySlam, moves::CometPunch, moves::Cut, moves::DefenseCurl, moves::DizzyPunch, moves::DoubleSlap, moves::DoubleEdge, moves::EggBomb, moves::Explosion, moves::FuryAttack, moves::FurySwipes, moves::Glare, moves::Growl, moves::Growth, moves::Guillotine, moves::Harden, moves::Headbutt, moves::HornAttack, moves::HornDrill, moves::HyperBeam, moves::HyperFang, moves::Leer, moves::LovelyKiss, moves::MegaKick, moves::MegaPunch, moves::Pound, moves::QuickAttack, moves::Rage, moves::RazorWind, moves::Recover, moves::Scratch, moves::Screech, moves::SelfDestruct, moves::Sharpen, moves::Sing, moves::SkullBash, moves::Slam, moves::Slash, moves::SoftBoiled, moves::SonicBoom, moves::SpikeCannon, moves::Splash, moves::Stomp, moves::Strength, moves::SuperFang, moves::Supersonic, moves::SwordsDance, moves::Tackle, moves::TailWhip, moves::TakeDown, moves::Thrash, moves::ViseGrip, moves::Wrap}}};
 
     level=1;
     exp=0;
-    switch(species){
+    initializeStats(sp);
+    IV=rand()%31;
+    vector<moves> selectedMoves;
+    if (type != PokemonType::Normal) {
+        selectedMoves.insert(selectedMoves.end(), availableMoves[type].begin(), availableMoves[type].end()); 
+    }
+    selectedMoves.insert(selectedMoves.end(), availableMoves[PokemonType::Normal].begin(), availableMoves[PokemonType::Normal].end());
+    random_shuffle(selectedMoves.begin(), selectedMoves.end()); 
+    move1 = new Attack(selectedMoves[0], 0, type); 
+    move2 = new Attack(selectedMoves[1], 0, type); 
+    move3 = new Attack(selectedMoves[2], 0, type); 
+
+}
+
+void Pokemon::initializeStats(PokemonSpecies sp){
+    switch(sp){
     case PokemonSpecies::Bulbasaur:
         type = PokemonType::Grass;
         baseHP = 45;
@@ -399,17 +415,6 @@ Pokemon::Pokemon(PokemonSpecies sp): species(sp){//constructor for all pokemon
         baseEXP = 0; // Default Base Experience
         GR = GrowthRate::Fast;
     }
-    IV=rand()%31;
-    vector<moves> selectedMoves;
-    if (type != PokemonType::Normal) {
-        selectedMoves.insert(selectedMoves.end(), availableMoves[type].begin(), availableMoves[type].end()); 
-    }
-    selectedMoves.insert(selectedMoves.end(), availableMoves[PokemonType::Normal].begin(), availableMoves[PokemonType::Normal].end());
-    random_shuffle(selectedMoves.begin(), selectedMoves.end()); 
-    move1 = new Attack(selectedMoves[0], 0, type); 
-    move2 = new Attack(selectedMoves[1], 0, type); 
-    move3 = new Attack(selectedMoves[2], 0, type); 
-
 }
 string Pokemon::speciesToString(PokemonSpecies species) {
     switch (species) {
@@ -515,6 +520,10 @@ int Pokemon::calculateDefense() const{
 }
 
 void Pokemon::addEXP(int val){
+    if(level>=100){
+        cout << speciesToString(species) << "is already lvl 100." << endl;
+        return;
+    }
     cout << speciesToString(species) << " gained " << val << " exp" << endl;
     exp+=val;
     if(GR==GrowthRate::Fast){
@@ -546,4 +555,24 @@ void Pokemon::addLevel(){
 
 int Pokemon::calculateEXP(Pokemon defeatedPokemon) const{
     return baseEXP*defeatedPokemon.level/7;
+}
+
+void Pokemon::setBaseHP(int val){
+    baseHP=val;
+}
+void Pokemon::setBaseAttack(int val){
+    baseAttack=val;
+}
+void Pokemon::setBaseDefense(int val){
+    baseDefense=val;
+}
+
+int Pokemon::getBaseHP(){
+    return baseHP;
+}
+int Pokemon::getBaseAttack(){
+    return baseAttack;
+}
+int Pokemon::getBaseDefense(){
+    return baseDefense;
 }
