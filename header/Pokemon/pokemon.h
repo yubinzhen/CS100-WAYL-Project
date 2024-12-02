@@ -57,7 +57,6 @@ class Pokemon
         void addEXP(int val);
         void addLevel();
         int calculateEXP(Pokemon defeatedPokemon) const;
-    protected:
         void setBaseHP(int val);
         void setBaseAttack(int val);
         void setBaseDefense(int val);

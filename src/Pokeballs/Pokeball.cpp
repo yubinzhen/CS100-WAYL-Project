@@ -15,7 +15,7 @@ void Pokeball::displayInformation()
     cout << "    Price: " << price << "¥" << endl;
 } 
 
-double Pokeball::getCatchMultiplyer()
+double Pokeball::getCatchMultiplyer() const
 {
     return catchMultiplyer;
 }

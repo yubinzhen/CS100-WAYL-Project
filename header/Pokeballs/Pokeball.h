@@ -12,5 +12,5 @@ class Pokeball : public Item
     public:
         Pokeball(string n, int p, string desc, double cMultiplyer);
         void displayInformation() override;
-        double getCatchMultiplyer();
+        double getCatchMultiplyer() const;
 };
