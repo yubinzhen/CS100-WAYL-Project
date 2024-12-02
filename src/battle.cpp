@@ -5,9 +5,28 @@
 
 using namespace std;
 
+void loseScreen() {
+    cout << "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////" << endl;
+    cout << " __________________________________________________________________________" << endl;
+    cout << "|                                                                          |" << endl;
+    cout << "|     _   _   _____   _   _          _       _____   _____   _____   _     |" << endl;
+    cout << "|    \\ \\ / / |  _  | | | | |        | |     |  _  | |  ___| |  ___| | |    |" << endl;
+    cout << "|     \\ V /  | | | | | | | |        | |     | | | | | |___  | |___  | |    |" << endl;
+    cout << "|      | |   | | | | | | | |        | |     | | | | |___  | |  ___| |_|    |" << endl;
+    cout << "|      | |   | |_| | | |_| |        | |___  | |_| |  ___| | | |___   _     |" << endl;
+    cout << "|      |_|   |_____| |_____|        |_____| |_____| |_____| |_____| |_|    |" << endl;
+    cout << "|                                                                          |" << endl;
+    cout << "|__________________________________________________________________________|" << endl;
+    cout << endl;
+    cout << "ALL OF YOUR POKEMON HAVE FAINTED!" << endl;
+    cout << "(1) Use Revive Item" << endl; // only works if the user actually owns one, use conditional
+    cout << "(2) Give up and flee" << endl;
+    cout << endl;
+}
+
 void battleMenu() {
     int choice;
-
+    
     cout << "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////" << endl;
     cout << " _____________________________________________________________________________________________________" << endl;
     cout << "|                                                                                                     |" << endl;
@@ -121,10 +140,10 @@ void Battle::flee() {
 
 void Battle::endBattle() {
     if (player->getTeam()[0]->getBaseHP() <= 0) {
-        displayLoseScreen.displayMenu();
+        loseScreen();
     } else if (wildPokemon->getBaseHP() <= 0) {
         cout << "You Won!" << endl;
         cout << endl;
-        displayBattleMenu.displayMenu();
+        battleMenu();
     }
 }

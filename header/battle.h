@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Battle{
+class Battle : public DisplayScreen{
     private:
         Player* player;
         Pokemon* wildPokemon;
