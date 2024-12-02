@@ -81,9 +81,9 @@ void Battle::startBattle() {
     cout << "A wild " << wildPokemon->speciesToString(wildPokemon->getSpecies()) << " appeared!" << endl;
     while (!checkBattleEnd()) {
         if (isPlayerTurn) {
-            playerTurn();
+            //playerTurn();
         } else {
-            wildPokemonTurn();
+            //wildPokemonTurn();
         }
         isPlayerTurn = !isPlayerTurn;
     }
