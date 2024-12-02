@@ -1,4 +1,4 @@
-#include "../header/pokemon.h"
+#include "../header/Pokemon/pokemon.h"
 Pokemon::Pokemon(PokemonSpecies sp): species(sp){//constructor for all pokemon
     availableMoves= { {PokemonType::Fire, {moves::FireSpin, moves::Flamethrower, moves::FireBlast, moves::Ember, moves::FirePunch}}, 
                     {PokemonType::Grass, {moves::Absorb, moves::LeechSeed, moves::MegaDrain, moves::PetalDance, moves::RazorLeaf, moves::SleepPowder, moves::SolarBeam, moves::Spore, moves::StunSpore, moves::VineWhip}}, 

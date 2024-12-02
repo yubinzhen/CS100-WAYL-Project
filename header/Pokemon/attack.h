@@ -3,7 +3,7 @@
 
 #include <string>
 #include "pokemon.h"
-#include "../src/moves.cpp"
+#include "../../src/Pokemon/moves.cpp"
 
 using std::string;
 

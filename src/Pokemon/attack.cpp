@@ -1,4 +1,4 @@
-#include "../header/attack.h"
+#include "../../header/Pokemon/attack.h"
 #include <iostream>
 
 Attack::Attack() : name(moves::None), type(PokemonType::Normal), power(0) {} //default constructor

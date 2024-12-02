@@ -1,4 +1,4 @@
-#include "../header/wildPokemon.h"
+#include "../../header/Pokemon/wildPokemon.h"
 
 WildPokemon::WildPokemon(int area){
     int randomIndex = rand() % allPokemonSpecies.size();

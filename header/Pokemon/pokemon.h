@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
-#include "../src/pokemonType.cpp"
-#include "../src/pokemonSpecies.cpp"
-#include "../src/growthRate.cpp"
+#include "../../src/Pokemon/pokemonType.cpp"
+#include "../../src//Pokemon/pokemonSpecies.cpp"
+#include "../../src//Pokemon/growthRate.cpp"
 #include "attack.h"
 #include <cstdlib>
 #include <ctime>
