@@ -78,7 +78,7 @@ bool Battle::checkBattleEnd() const {
 Battle::Battle(Player* p, Pokemon* wp) : player(p), wildPokemon(wp), isPlayerTurn(true) {}
 
 void Battle::startBattle() {
-    cout << "A wild " << wildPokemon->speciesToString(wildPokemon) << " appeared!" << endl;
+    cout << "A wild " << wildPokemon->speciesToString(wildPokemon->getSpecies()) << " appeared!" << endl;
     while (!checkBattleEnd()) {
         if (isPlayerTurn) {
             playerTurn();
