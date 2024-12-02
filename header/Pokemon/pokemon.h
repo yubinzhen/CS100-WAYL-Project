@@ -1,8 +1,9 @@
+#pragma once
 #include <iostream>
 #include <vector>
 #include "../../src/Pokemon/pokemonType.cpp"
-#include "../../src//Pokemon/pokemonSpecies.cpp"
-#include "../../src//Pokemon/growthRate.cpp"
+#include "../../src/Pokemon/pokemonSpecies.cpp"
+#include "../../src/Pokemon/growthRate.cpp"
 #include "attack.h"
 #include <cstdlib>
 #include <ctime>

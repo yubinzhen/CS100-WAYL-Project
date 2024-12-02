@@ -1,5 +1,7 @@
 #pragma once
 
+class Player;
+
 #include "player.h"
 #include "Pokemon/pokemon.h"
 
@@ -15,7 +17,8 @@ class Battle {
         Pokemon* displayBattleMenu;
 
     public: 
-        Battle(Player*, Pokemon* );
+        Battle() : player(nullptr), wildPokemon(nullptr), isPlayerTurn(true), displayBattleMenu(nullptr) {}
+        Battle(Player* p, Pokemon* wp) : player(p), wildPokemon(wp), isPlayerTurn(true), displayBattleMenu(nullptr) {}
         void startBattle();
         bool isCatchable() const;
         bool isCatchSuccess(const Pokeball& pokeball);

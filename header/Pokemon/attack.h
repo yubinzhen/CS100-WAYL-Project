@@ -1,6 +1,4 @@
-#ifndef ATTACK_H
-#define ATTACK_H
-
+#pragma once
 #include <string>
 #include "pokemon.h"
 #include "../../src/Pokemon/moves.cpp"
@@ -13,7 +11,7 @@ class Attack {
         PokemonType type;
         int power;
     public:
-        ~Attack(){}
+        ~Attack() = default;
         Attack& operator=(const Attack& other) {
             if (this == &other) { // Check for self-assignment
                 return *this;
@@ -31,7 +29,5 @@ class Attack {
         string getName() const;//get name of the moves
         int getpower() const;//get the value of power
         int calculateDamage(Pokemon attacker, Pokemon defender) const;//calculates the actual damage to the opponent
-        void displayInfo();//display name and power
+        void displayInfo() const;//display name and power
 };
-
-#endif

@@ -1,3 +1,4 @@
+#pragma once
 #include "pokemon.h"
 class WildPokemon : public Pokemon{
     private:

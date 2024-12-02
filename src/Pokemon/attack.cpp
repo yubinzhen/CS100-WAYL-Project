@@ -1,4 +1,5 @@
 #include "../../header/Pokemon/attack.h"
+#include "../../header/Pokemon/pokemon.h"
 #include <iostream>
 
 Attack::Attack() : name(moves::None), type(PokemonType::Normal), power(0) {} //default constructor
@@ -426,7 +427,7 @@ int Attack::calculateDamage(Pokemon attacker, Pokemon defender) const{//this is 
     return damage*(85+rand()%30)/100;
 }
 
-void Attack::displayInfo() {//display the information for the move
+void Attack::displayInfo() const {//display the information for the move
         cout << "Move Name: " << getName()
                   << "\nPower: " << getpower() << "\n";
 }

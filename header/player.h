@@ -5,7 +5,8 @@
 #include <limits>
 #include "Inventory.h"
 #include "../header/DisplayScreen.h"
-#include "../header/battle.h"
+#include "Pokemon/pokemon.h"
+#include "battle.h"
 
 using namespace std;
 
@@ -15,10 +16,11 @@ class Player : public DisplayScreen {
        vector<Pokemon*> caughtPokemons;     // List of Pokemon player has caught
        vector<Pokemon*> selectedTeam;       // Player's team (3 Pokemon)
        Inventory* myInventory;
-       Battle* battle;
 
    public:
-        Player() : money(0), myInventory(new Inventory()), battle(new Battle(this, nullptr)) {}
+        Player() : money(0), myInventory(new Inventory()) {}
+        Player(int mon, Inventory* myInven) : money(mon), myInventory(myInven){}
+        ~Player();
        int getMoney() const;
        string getName() const;
        vector<Pokemon*> getCaughtPokemon() const;

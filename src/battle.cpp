@@ -75,8 +75,6 @@ bool Battle::checkBattleEnd() const {
     return player->getTeam()[0]->getBaseHP() <= 0 || wildPokemon->getBaseHP() <=0;
 }
 
-Battle::Battle(Player* p, Pokemon* wp) : player(p), wildPokemon(wp), isPlayerTurn(true) {}
-
 void Battle::startBattle() {
     cout << "A wild " << wildPokemon->speciesToString(wildPokemon->getSpecies()) << " appeared!" << endl;
     while (!checkBattleEnd()) {

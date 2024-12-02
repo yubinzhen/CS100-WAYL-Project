@@ -2,6 +2,14 @@
 
 using namespace std;
 
+
+Player::~Player() {
+   delete myInventory;
+   for (Pokemon* p : caughtPokemons) {
+      delete p;
+   }
+}
+
 int Player::getMoney() const {
     return money;
 }
@@ -27,7 +35,8 @@ void Player::accessInventory() {
 }
 
 void Player::enterBattle() {
-   battle->battleMenu();
+   Battle battle;
+   battle.battleMenu();
 }
 
 void Player::logout() {
