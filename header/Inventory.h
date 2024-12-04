@@ -29,4 +29,8 @@ class Inventory
         void sellItem();
         void addMoney(int );
         int getMoney();
+        int selectOptionHelper1();
+        bool selectOptionHelper2();
+        int clearInputHelper();
+        int amountHelper();
 };
