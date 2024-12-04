@@ -5,5 +5,6 @@ using namespace std;
 class HyperPotion : public Potion
 {
     public:
+        ~HyperPotion() override{}
         HyperPotion();
 };

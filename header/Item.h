@@ -16,6 +16,7 @@ class Item
         string description;
 
     public:
+        virtual ~Item() {}
         virtual void displayInformation() = 0;
         string getName();
         int getPrice();
