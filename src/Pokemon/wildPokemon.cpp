@@ -12,3 +12,4 @@ WildPokemon::WildPokemon(int area){
         addLevel();
     }
 }
+

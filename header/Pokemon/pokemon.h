@@ -46,6 +46,36 @@ class Pokemon
             move2=nullptr;
             move3=nullptr;
         }
+
+        Pokemon& operator=(const Pokemon& other){
+            if (this == &other) {
+                return *this;
+            }
+
+            // Clean up dynamically allocated memory
+            delete move1;
+            delete move2;
+            delete move3;
+
+            // Copy all members from the other object
+            species = other.species;
+            type = other.type;
+            GR = other.GR;
+            level = other.level;
+            exp = other.exp;
+            baseEXP = other.baseEXP;
+            baseHP = other.baseHP;
+            IV = other.IV;
+            baseAttack = other.baseAttack;
+            baseDefense = other.baseDefense;
+
+            // Deep copy of dynamically allocated memory
+            move1 = other.move1 ? new Attack(*other.move1) : nullptr;
+            move2 = other.move2 ? new Attack(*other.move2) : nullptr;
+            move3 = other.move3 ? new Attack(*other.move3) : nullptr;
+
+            return *this;
+        }
         void displayInfo();//displays every attributes for each pokemon
 
         int calculateHP() const;//calculates HP as the level goes up
