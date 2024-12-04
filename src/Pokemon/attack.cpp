@@ -1,5 +1,6 @@
 #include "../../header/Pokemon/attack.h"
 #include "../../header/Pokemon/pokemon.h"
+#include "../../header/Pokemon/moves.h"
 #include <iostream>
 
 Attack::Attack() : name(moves::None), type(PokemonType::Normal), power(0) {} //default constructor
@@ -323,6 +324,8 @@ Attack::Attack(moves name, int power, PokemonType t){//constructor for every mov
             break;
     }
 }
+
+
 
 string Attack::getName() const {//use this function to get the name of the moves
     switch (name) {

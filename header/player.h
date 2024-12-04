@@ -4,13 +4,12 @@
 #include <iostream>
 #include <limits>
 #include "Inventory.h"
-#include "../header/DisplayScreen.h"
 #include "Pokemon/pokemon.h"
 #include "battle.h"
 
 using namespace std;
 
-class Player : public DisplayScreen {
+class Player {
    private:
        int money;
        vector<Pokemon*> caughtPokemons;     // List of Pokemon player has caught

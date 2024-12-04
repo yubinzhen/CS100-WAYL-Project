@@ -1,14 +1,15 @@
 #pragma once
-#include <iostream>
-#include <vector>
-#include "../../src/Pokemon/pokemonType.cpp"
-#include "../../src/Pokemon/pokemonSpecies.cpp"
-#include "../../src/Pokemon/growthRate.cpp"
+#include "pokemonType.h"
+#include "pokemonSpecies.h"
+#include "growthRate.h"
+#include "moves.h"
 #include "attack.h"
 #include <cstdlib>
 #include <ctime>
 #include <map> 
 #include <algorithm>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Pokemon
@@ -27,7 +28,7 @@ class Pokemon
         Attack* move1;
         Attack* move2;
         Attack* move3;
-        static std::map<PokemonType, std::vector<moves>> availableMoves;
+         static std::map<PokemonType, std::vector<moves>> availableMoves;
     public:
         ~Pokemon(){
             delete move1;
@@ -38,9 +39,9 @@ class Pokemon
         Pokemon(){//default constructor
             species=PokemonSpecies::none;
             type = PokemonType::Normal;
-            baseHP=0;
-            baseAttack=0;
-            baseDefense=0;
+            baseHP=100;
+            baseAttack=50;
+            baseDefense=30;
             move1=nullptr;
             move2=nullptr;
             move3=nullptr;
@@ -77,3 +78,4 @@ class Pokemon
         }
 
 };
+
