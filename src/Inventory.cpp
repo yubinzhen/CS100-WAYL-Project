@@ -254,6 +254,6 @@ Item* Inventory::getItem(int i)
     {
         return nullptr;
     }
-    
+
     return items.at(i);
 }
