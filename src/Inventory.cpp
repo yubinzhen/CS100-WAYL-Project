@@ -266,8 +266,3 @@ int Inventory::getMoney()
 {
     return money;
 }
-
-void Inventory::addItem(Item* newItem)
-{
-    cout << "Implement addItem()" << endl;
-}

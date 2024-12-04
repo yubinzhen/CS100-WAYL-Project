@@ -25,7 +25,6 @@ class Inventory
         void viewMyItems();
         void store();
         void storeItems();
-        void addItem(Item* );
         void buyItem();
         void sellItem();
         void addMoney(int );
