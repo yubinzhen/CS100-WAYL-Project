@@ -22,6 +22,6 @@ class WildPokemon : public Pokemon{
         };
         WildPokemon(int area);
     public:
-        void wildPokemonMove();
+        Attack* wildPokemonMove(Pokemon& opponent);
 
 };

@@ -103,6 +103,10 @@ class Pokemon
         int getBaseAttack();
         int getBaseDefense();
 
+        Attack* getMove1();
+        Attack* getMove2();
+        Attack* getMove3();
+
         PokemonSpecies getSpecies() const {
             return species;
         }

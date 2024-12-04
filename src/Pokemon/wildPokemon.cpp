@@ -13,3 +13,27 @@ WildPokemon::WildPokemon(int area){
     }
 }
 
+Attack* WildPokemon::wildPokemonMove(Pokemon& opponent){
+    Pokemon dummy =Pokemon();
+    dummy = opponent;
+    int move1Damage=dummy.getMove1()->calculateDamage(dummy, opponent);
+    int max = move1Damage;
+    int move2Damage=dummy.getMove2()->calculateDamage(dummy, opponent);
+    int move3Damage=dummy.getMove3()->calculateDamage(dummy, opponent);
+    if(move2Damage >max){
+        max = dummy.getMove2()->calculateDamage(dummy, opponent);
+    }
+    if(move3Damage >max){
+        max = dummy.getMove3()->calculateDamage(dummy, opponent);
+    }
+    if(move1Damage==max){
+        return dummy.getMove1();
+    }
+    else if(move2Damage==max){
+        return dummy.getMove2();
+    }
+    else{
+        return dummy.getMove3();
+    }
+}
+

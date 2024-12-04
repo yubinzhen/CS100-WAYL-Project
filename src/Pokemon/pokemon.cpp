@@ -579,3 +579,13 @@ int Pokemon::getBaseAttack(){
 int Pokemon::getBaseDefense(){
     return baseDefense;
 }
+
+Attack* Pokemon::getMove1(){
+    return move1;
+}
+Attack* Pokemon::getMove2(){
+    return move2;
+}
+Attack* Pokemon::getMove3(){
+    return move3;
+}
