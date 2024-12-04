@@ -247,3 +247,13 @@ bool Inventory::selectOptionHelper2()
 
     return flag;
 }
+
+Item* Inventory::getItem(int i)
+{
+    if (i < 0 || i > 7)
+    {
+        return nullptr;
+    }
+    
+    return items.at(i);
+}

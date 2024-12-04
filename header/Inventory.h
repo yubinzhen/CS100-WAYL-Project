@@ -33,4 +33,5 @@ class Inventory
         bool selectOptionHelper2();
         int clearInputHelper();
         int amountHelper();
+        Item* getItem(int );
 };
