@@ -96,8 +96,13 @@ void Battle::startBattle() {
     int pokemonChoice;
     cout << "Which Pokemon do you want to use?" << endl;
     cout << "1. " << player->getPokemon1Name() << endl;
-    cout << "2. " << player->getPokemon2Name() << endl;
-    cout << "3. " << player->getPokemon3Name() << endl;
+    //cout << "2. " << player->getPokemon2Name() << endl;
+    //cout << "3. " << player->getPokemon3Name() << endl;
+
+    /*for (size_t i = 0; i < player->getTeam().size(); ++i) {
+        cout << i + 1 << ". " << player->getTeam()[i]->speciesToString(player->getTeam()[i]->getSpecies()) << endl;
+    }*/
+
     cin >> pokemonChoice;
 
     while (!cin || pokemonChoice <= 0 || pokemonChoice >= 4) {
@@ -128,6 +133,7 @@ void Battle::startBattle() {
     }
     endBattle();
 }
+
 
 void Battle::playerTurn() {
     cout << "It's your turn!\n";
