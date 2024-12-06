@@ -556,8 +556,8 @@ void Pokemon::addLevel(){
     level++;
 }
 
-int Pokemon::calculateEXP(Pokemon defeatedPokemon) const{
-    return baseEXP*defeatedPokemon.level/7;
+int Pokemon::calculateEXP(Pokemon* defeatedPokemon) const{
+    return baseEXP*defeatedPokemon->getLevel()/7;
 }
 
 void Pokemon::setBaseHP(int val){

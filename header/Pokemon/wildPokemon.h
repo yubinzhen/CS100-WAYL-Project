@@ -20,8 +20,8 @@ class WildPokemon : public Pokemon{
             PokemonSpecies::Kangaskhan, PokemonSpecies::Tangela, PokemonSpecies::Gyarados,
             PokemonSpecies::Moltres, PokemonSpecies::Snorlax, PokemonSpecies::none
         };
-        WildPokemon(int area);
-    public:
-        Attack* wildPokemonMove(Pokemon& opponent);
 
+    public:
+        WildPokemon(int area);
+        Attack* wildPokemonMove(Pokemon& opponent);
 };

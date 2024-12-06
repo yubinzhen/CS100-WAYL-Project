@@ -81,7 +81,7 @@ class Pokemon
         int calculateHP() const;//calculates HP as the level goes up
         int calculateAttack() const;//calculates Attack as the level goes up
         int calculateDefense() const;//calculates Defense as the leve goes up
-        int calculateEXP(Pokemon defeatedPokemon) const;
+        int calculateEXP(Pokemon* defeatedPokemon) const;
         
         void initializeStats(PokemonSpecies sp);
 
