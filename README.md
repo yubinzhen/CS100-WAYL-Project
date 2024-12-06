@@ -109,7 +109,7 @@ A third SOLID principle we applied to our new class diagram was Interface Segreg
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ Our program is terminal based, therefore to play our Pokemon role-playing game, the user will need to run the executable. Users are free to pick any option displayed on the terminal. 
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+To test our program, we made unit tests for each function to make sure all our functions worked correctly. We also used valgrind to check for memory allocation.
  
