@@ -1,12 +1,11 @@
 #include "../../header/Pokemon/pokemon.h"
 #include "../../header/Pokemon/attack.h"
-std::map<PokemonType, std::vector<moves>> Pokemon::availableMoves = {
-    {PokemonType::Fire, {moves::FireSpin, moves::Flamethrower, moves::FireBlast, moves::Ember, moves::FirePunch}},
-    {PokemonType::Grass, {moves::Absorb, moves::LeechSeed, moves::MegaDrain, moves::PetalDance, moves::RazorLeaf, moves::SleepPowder, moves::SolarBeam, moves::Spore, moves::StunSpore, moves::VineWhip}},
-    {PokemonType::Water, {moves::Clamp, moves::Crabhammer, moves::HydroPump, moves::Surf, moves::WaterGun, moves::Waterfall, moves::Withdraw}},
-    {PokemonType::Normal, {moves::Barrage, moves::Bide, moves::Bind, moves::BodySlam, moves::CometPunch, moves::Cut, moves::DefenseCurl, moves::DizzyPunch, moves::DoubleSlap, moves::DoubleEdge, moves::EggBomb, moves::Explosion, moves::FuryAttack, moves::FurySwipes, moves::Glare, moves::Growl, moves::Growth, moves::Guillotine, moves::Harden, moves::Headbutt, moves::HornAttack, moves::HornDrill, moves::HyperBeam, moves::HyperFang, moves::Leer, moves::LovelyKiss, moves::MegaKick, moves::MegaPunch, moves::Pound, moves::QuickAttack, moves::Rage, moves::RazorWind, moves::Recover, moves::Scratch, moves::Screech, moves::SelfDestruct, moves::Sharpen, moves::Sing, moves::SkullBash, moves::Slam, moves::Slash, moves::SoftBoiled, moves::SonicBoom, moves::SpikeCannon, moves::Splash, moves::Stomp, moves::Strength, moves::SuperFang, moves::Supersonic, moves::SwordsDance, moves::Tackle, moves::TailWhip, moves::TakeDown, moves::Thrash, moves::ViseGrip, moves::Wrap}}
-};
-
+#include <algorithm>
+#include <random> 
+vector<moves> fireTypeMoves= {moves::FireSpin, moves::Flamethrower, moves::FireBlast, moves::Ember, moves::FirePunch};
+vector<moves> waterTypeMoves = {moves::Clamp, moves::Crabhammer, moves::HydroPump, moves::Surf, moves::WaterGun, moves::Waterfall, moves::Withdraw};
+vector<moves> grassTypeMoves = {moves::Absorb, moves::LeechSeed, moves::MegaDrain, moves::PetalDance, moves::RazorLeaf, moves::SleepPowder, moves::SolarBeam, moves::Spore, moves::StunSpore, moves::VineWhip};
+vector<moves> normalTypeMoves = {moves::Barrage, moves::Bide, moves::Bind, moves::BodySlam, moves::CometPunch, moves::Cut, moves::DefenseCurl, moves::DizzyPunch, moves::DoubleSlap, moves::DoubleEdge, moves::EggBomb, moves::Explosion, moves::FuryAttack, moves::FurySwipes, moves::Glare, moves::Growl, moves::Growth, moves::Guillotine, moves::Harden, moves::Headbutt, moves::HornAttack, moves::HornDrill, moves::HyperBeam, moves::HyperFang, moves::Leer, moves::LovelyKiss, moves::MegaKick, moves::MegaPunch, moves::Pound, moves::QuickAttack, moves::Rage, moves::RazorWind, moves::Recover, moves::Scratch, moves::Screech, moves::SelfDestruct, moves::Sharpen, moves::Sing, moves::SkullBash, moves::Slam, moves::Slash, moves::SoftBoiled, moves::SonicBoom, moves::SpikeCannon, moves::Splash, moves::Stomp, moves::Strength, moves::SuperFang, moves::Supersonic, moves::SwordsDance, moves::Tackle, moves::TailWhip, moves::TakeDown, moves::Thrash, moves::ViseGrip, moves::Wrap};
 Pokemon::Pokemon(PokemonSpecies sp): species(sp){//constructor for all pokemon
     level=1;
     exp=0;
@@ -14,13 +13,35 @@ Pokemon::Pokemon(PokemonSpecies sp): species(sp){//constructor for all pokemon
     IV=rand()%31;
     vector<moves> selectedMoves;
     if (type != PokemonType::Normal) {
-        selectedMoves.insert(selectedMoves.end(), availableMoves[type].begin(), availableMoves[type].end()); 
+        if(type == PokemonType::Fire){
+            selectedMoves.push_back(fireTypeMoves[rand()%fireTypeMoves.size()]); 
+            selectedMoves.push_back(fireTypeMoves[rand()%fireTypeMoves.size()]);
+        }
+        else if(type == PokemonType::Water){
+            selectedMoves.push_back(waterTypeMoves[rand()%waterTypeMoves.size()]); 
+            selectedMoves.push_back(waterTypeMoves[rand()%waterTypeMoves.size()]);
+        }
+        else if(type == PokemonType::Grass){
+            selectedMoves.push_back(grassTypeMoves[rand()%grassTypeMoves.size()]); 
+            selectedMoves.push_back(grassTypeMoves[rand()%grassTypeMoves.size()]); 
+        }
     }
-    selectedMoves.insert(selectedMoves.end(), availableMoves[PokemonType::Normal].begin(), availableMoves[PokemonType::Normal].end());
-    random_shuffle(selectedMoves.begin(), selectedMoves.end()); 
-    move1 = new Attack(selectedMoves[0], 0, type); 
-    move2 = new Attack(selectedMoves[1], 0, type); 
-    move3 = new Attack(selectedMoves[2], 0, type); 
+    selectedMoves.push_back(normalTypeMoves[rand() % normalTypeMoves.size()]);
+    move1 = new Attack(selectedMoves[0]); 
+    move2 = new Attack(selectedMoves[1]); 
+    move3 = new Attack(selectedMoves[2]); 
+
+
+}
+Pokemon::Pokemon(PokemonSpecies sp, int lvl, int EXP, int iv, moves m1, moves m2, moves m3){//constructor for all pokemon
+    species=sp;
+    level=lvl;
+    exp=EXP;
+    initializeStats(sp);
+    IV=iv;
+    move1 = new Attack(m1); 
+    move2 = new Attack(m2); 
+    move3 = new Attack(m3); 
 
 }
 
@@ -492,7 +513,10 @@ void Pokemon::displayInfo() {
                   << "\nType: " << typeToString(type)
                   << "\nHP: " << calculateHP()
                   << "\nBase Attack: " << baseAttack
-                  << "\nBase Defense: " << baseDefense << "\n";
+                  << "\nBase Defense: " << baseDefense 
+                  << "\n Move 1 name: " << move1->getName(move1->getMoves())
+                  << "\n Move 2 name: " << move2->getName(move2->getMoves())
+                  << "\n Move 3 name: " << move3->getName(move3->getMoves())<< "\n";
 }
 
 bool Pokemon::isTypeEffective(Pokemon defender) {
@@ -556,8 +580,8 @@ void Pokemon::addLevel(){
     level++;
 }
 
-int Pokemon::calculateEXP(Pokemon* defeatedPokemon) const{
-    return baseEXP*defeatedPokemon->getLevel();
+int Pokemon::calculateEXP(Pokemon defeatedPokemon) const{
+    return baseEXP*defeatedPokemon.level/7;
 }
 
 void Pokemon::setBaseHP(int val){
@@ -580,12 +604,12 @@ int Pokemon::getBaseDefense(){
     return baseDefense;
 }
 
-Attack* Pokemon::getMove1(){
+Attack* Pokemon::getMove1() const{
     return move1;
 }
-Attack* Pokemon::getMove2(){
+Attack* Pokemon::getMove2() const{
     return move2;
 }
-Attack* Pokemon::getMove3(){
+Attack* Pokemon::getMove3() const{
     return move3;
 }

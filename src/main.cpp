@@ -60,7 +60,7 @@ PokemonSpecies stringtoSpecies(string& sp) {
     return PokemonSpecies::none;
 }
 
-moves stringToMove(const std::string& move) {
+moves stringToMove(const string& move) {
     if (move == "FireSpin") return moves::FireSpin;
     if (move == "Flamethrower") return moves::Flamethrower;
     if (move == "FireBlast") return moves::FireBlast;
@@ -299,9 +299,9 @@ int main()
             myFile << myPokemon->getLevel() << endl;
             myFile << myPokemon->getEXP() << endl;
             myFile << myPokemon -> getIV() << endl;
-            myFile << myPokemon -> getMove1()->getName() << endl;
-            myFile << myPokemon -> getMove2()->getName() << endl;
-            myFile << myPokemon -> getMove3()->getName() << endl;
+            myFile << myPokemon -> getMove1()->getName(myPokemon->getMove1()->getMoves()) << endl;
+            myFile << myPokemon -> getMove2()->getName(myPokemon->getMove2()->getMoves()) << endl;
+            myFile << myPokemon -> getMove3()->getName(myPokemon->getMove3()->getMoves()) << endl;
             
             myFile << "..." << endl;
         }
