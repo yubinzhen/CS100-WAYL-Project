@@ -21,7 +21,7 @@ class Attack {
             return *this;
         }
         Attack();
-        Attack(moves name, int power, PokemonType t);
+        Attack(moves name);
 
         string getName() const;//get name of the moves
         int getpower() const;//get the value of power

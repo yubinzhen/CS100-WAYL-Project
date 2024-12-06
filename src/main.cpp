@@ -268,7 +268,8 @@ int main()
     while (!(myPlayer->logout()))
     {
         myPlayer->menu();
-        ofstream myFile;
+    }
+    ofstream myFile;
         if(!isLoaded){
             cout << "How would you like to save (type the file name)?" << endl;
             string filename;
@@ -315,7 +316,4 @@ int main()
         std::cout << "File created and saved successfully." << std::endl;
         destructor(myPlayer, myInventory);
         return 0;
-    }
-    destructor(myPlayer, myInventory);
-    return 0;
 }
