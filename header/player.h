@@ -12,13 +12,14 @@ using namespace std;
 class Player {
    private:
        int money;
+       bool isEnded;
        vector<Pokemon*> caughtPokemons;     // List of Pokemon player has caught
        vector<Pokemon*> selectedTeam;       // Player's team (3 Pokemon)
        Inventory* myInventory;
 
    public:
-        Player() : money(0), myInventory(new Inventory()) {}
-        Player(int mon, Inventory* myInven) : money(mon), myInventory(myInven){}
+        Player() : money(0), myInventory(new Inventory()), isEnded(false) {}
+        Player(int mon, Inventory* myInven) : money(mon), myInventory(myInven), isEnded(false){}
         ~Player();
        int getMoney() const;
        string getName() const;
@@ -27,7 +28,7 @@ class Player {
        vector<Pokemon*> getTeam() const;
        void accessInventory();
        void enterBattle();
-       void logout();
+       bool logout();
        void menu();
        
 };

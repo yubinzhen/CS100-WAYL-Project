@@ -31,7 +31,7 @@ vector<Pokemon*> Player::getTeam() const {
 }
 
 void Player::accessInventory() {
-   myInventory->store();
+   myInventory->viewMyItems();
 }
 
 void Player::enterBattle() {
@@ -39,8 +39,8 @@ void Player::enterBattle() {
    battle.battleMenu();
 }
 
-void Player::logout() {
-   //go to main menu screen to save/logout
+bool Player::logout() {
+   return isEnded;
 }
 
 void Player::menu() {
@@ -61,7 +61,8 @@ void Player::menu() {
    cout << "(1) View Inventory" << endl;
    cout << "(2) Shop at Store" << endl;
    cout << "(3) Search for Wild Pokemon" << endl;
-   cout << "(4) Log Out" << endl;
+   cout << "(4) View Pokemon in PC" << endl;
+   cout << "(5) Log Out" << endl;
    cout << endl;
 
    cin >> choice;
@@ -78,8 +79,13 @@ void Player::menu() {
       myInventory->store();
    } else if (choice == 3) {
       enterBattle();
-   } else if (choice == 4) {
+   } else if (choice == 4){
+      
+   } else if (choice == 5) {
+      isEnded = true;
       logout();
-   }
+   } 
+   
+   
 }
 
