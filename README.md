@@ -52,9 +52,9 @@ This screen displays the user's currently owned items.
 
 This screen displays the Pokemon they have in storage, and the user can (1) view the stats of a specific pokemon, (2) view or change the pokemon they have in their current battle team, or (3) go back to the previous screen. This screen's options may vary depending on if the user originates from the menu screen or battle menu screen.
 
-![Screenshot 2024-11-21 233546](https://github.com/user-attachments/assets/c2fbeef0-f09f-4438-bf55-67b114be9f99)
+![image](https://github.com/user-attachments/assets/7ed50bf1-535c-4d5c-96fa-c85fc2ec29f1)
 
-This screen will show the user all the different items the user can purchase (ex. Pokeball, revive, etc.) and what the user balance is. The user can (1) view the stats of a specific item, (2) purchase a specific item, or (3) go back to the previous screen if the user is done shopping.
+This screen will show the user all the different items the user can purchase (ex. Pokeball, revive, etc.) and what the user balance is. The user can (1) buy an item, (2) sell an item, (3) view their items, or (4) go back to the previous screen if the user is done shopping.
 
 ![Screenshot 2024-11-21 233550](https://github.com/user-attachments/assets/d1a27a7f-b334-4660-91bf-00f8f9ecee57)
 
