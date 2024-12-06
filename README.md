@@ -114,6 +114,11 @@ A third SOLID principle we applied to our new class diagram was Interface Segreg
 
 <img width="945" alt="Screenshot 2024-12-06 at 3 29 38 PM" src="https://github.com/user-attachments/assets/c0eebc42-0911-4a13-be2e-e70b7858d503">
 
+<img width="946" alt="Screenshot 2024-12-06 at 3 47 28 PM" src="https://github.com/user-attachments/assets/e21df977-2c61-49e7-8b59-184458f5f6c4">
+
+<img width="679" alt="Screenshot 2024-12-06 at 3 54 32 PM" src="https://github.com/user-attachments/assets/b8314831-9950-4fb4-8896-6d957c9ce940">
+
+<img width="359" alt="Screenshot 2024-12-06 at 3 54 45 PM" src="https://github.com/user-attachments/assets/81735c48-ba99-4a9c-8169-70bb8bb16459">
 
  ## Installation/Usage
  Our program is terminal based, therefore to play our Pokemon role-playing game, the user will need to run the executable. Users are free to pick any option displayed on the terminal. 
