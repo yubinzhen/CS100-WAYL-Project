@@ -4,8 +4,6 @@ CMakeLists.txt
 
 .gitmodules
 
-Tests/
-
 CMakeFiles/*
 
 Makefile
