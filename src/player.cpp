@@ -119,7 +119,7 @@ void Player::displayPCMenu(){
     } else {
         cout << "Pokemon in your PC:" << endl;
         for (int i=0; i< getCaughtPokemon().size(); i++) {
-            cout << i + 1 << ". " << getCaughtPokemon().at(i);
+            cout << i + 1 << ". " << getCaughtPokemon().at(i)->speciesToString(getCaughtPokemon().at(i)->getSpecies());
             cout << endl;
         }
         cout << "Total Caught Pokemon: " << getCaughtPokemon().size() << endl;

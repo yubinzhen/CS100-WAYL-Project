@@ -36,6 +36,7 @@ class Pokemon
             delete move3;
         }
         Pokemon(PokemonSpecies sp);
+        Pokemon(PokemonSpecies sp, int lvl, int EXP, int iv, moves m1, moves m2, moves m3);
         Pokemon(){//default constructor
             species=PokemonSpecies::none;
             type = PokemonType::Normal;
@@ -109,6 +110,13 @@ class Pokemon
 
         PokemonSpecies getSpecies() const {
             return species;
+        }
+
+        int getEXP() const {
+            return exp;
+        }
+        int getIV() const {
+            return IV;
         }
 
 };

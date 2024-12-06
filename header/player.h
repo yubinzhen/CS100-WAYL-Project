@@ -13,8 +13,8 @@ class Player {
    private:
        int money;
        bool isEnded;
-       vector<Pokemon*> caughtPokemons;     // List of Pokemon player has caught
-       vector<Pokemon*> selectedTeam;       // Player's team (3 Pokemon)
+       vector<Pokemon*> caughtPokemons = {new Pokemon(PokemonSpecies::Bulbasaur), new Pokemon(PokemonSpecies::Charmander), new Pokemon(PokemonSpecies::Squirtle)};     // List of Pokemon player has caught
+       vector<Pokemon*> selectedTeam = {new Pokemon(PokemonSpecies::Bulbasaur), new Pokemon(PokemonSpecies::Charmander), new Pokemon(PokemonSpecies::Squirtle)};       // Player's team (3 Pokemon)
        Inventory* myInventory;
 
    public:
