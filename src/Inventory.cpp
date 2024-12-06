@@ -248,12 +248,72 @@ bool Inventory::selectOptionHelper2()
     return flag;
 }
 
-Item* Inventory::getItem(int i)
+bool Inventory::useItems(string name)
 {
-    if (i < 0 || i > 7)
+    if (name == "Pokeball")
     {
-        return nullptr;
+        if (items.at(0)->getAmount() == 0)
+        {
+            cout << "You don't have any Pokeballs!" << endl;
+            return false;
+        }
+    }
+    else if (name == "Great Ball")
+    {
+        if (items.at(0)->getAmount() == 0)
+        {
+            cout << "You don't have any Great Balls!" << endl;
+            return false;
+        }
+    }
+    else if (name == "Ultra Ball")
+    {
+        if (items.at(0)->getAmount() == 0)
+        {
+            cout << "You don't have any Ultra Balls!" << endl;
+            return false;
+        }
+    }
+    else if (name == "Potion")
+    {
+        if (items.at(0)->getAmount() == 0)
+        {
+            cout << "You don't have any Potions!" << endl;
+            return false;
+        }
+    }
+    else if (name == "Super Potion")
+    {
+        if (items.at(0)->getAmount() == 0)
+        {
+            cout << "You don't have any Super Potions!" << endl;
+            return false;
+        }
+    }
+    else if (name == "Hyper Potion")
+    {
+        if (items.at(0)->getAmount() == 0)
+        {
+            cout << "You don't have any Hyper Potions!" << endl;
+            return false;
+        }
+    }
+    else if (name == "Revive")
+    {
+        if (items.at(0)->getAmount() == 0)
+        {
+            cout << "You don't have any Revives!" << endl;
+            return false;
+        }
+    }
+    else if (name == "Max Revive")
+    {
+        if (items.at(0)->getAmount() == 0)
+        {
+            cout << "You don't have any Max Revives!" << endl;
+            return false;
+        }
     }
 
-    return items.at(i);
+    return true;
 }
