@@ -11,6 +11,7 @@ WildPokemon::WildPokemon(int area){
     for(int i=0;i<randomLevel;i++){
         addLevel();
     }
+    cout << "A wild " << speciesToString(species) << " appeared!" << endl;
 }
 
 Attack* WildPokemon::wildPokemonMove(Pokemon& opponent){

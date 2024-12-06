@@ -43,7 +43,11 @@ bool Player::accessInventory(string name) {
 }
 
 void Player::enterBattle() {
-   Battle battle;
+    for(int i=0; i<selectedTeam.size();i++){
+        selectedTeam.at(i)->displayInfo();
+        cout << endl;
+    }
+   Battle battle = Battle(selectedTeam);
    battle.battleMenu();
 }
 

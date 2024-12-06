@@ -61,7 +61,7 @@ class Player; // Forward declaration
 class Battle {
     private:
         Pokemon* activePokemon;
-        Player* player;
+        vector<Pokemon*> team;
         WildPokemon* wildPokemon;
         bool isPlayerTurn;
         int pokemon1CurrHealth; 
@@ -73,8 +73,8 @@ class Battle {
         bool checkBattleEnd() const;
 
     public: 
-        Battle() : player(nullptr), isPlayerTurn(true) {}
-        Battle(Player* p, WildPokemon* wp);
+        Battle() : isPlayerTurn(true) {}
+        Battle(vector<Pokemon*>& team);
         //~Battle();
         void startBattle();
         bool isCatchable() const;

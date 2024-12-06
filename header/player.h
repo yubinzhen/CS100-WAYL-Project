@@ -13,13 +13,34 @@ class Player {
    private:
        int money;
        bool isEnded;
-       vector<Pokemon*> caughtPokemons = {new Pokemon(PokemonSpecies::Bulbasaur), new Pokemon(PokemonSpecies::Charmander), new Pokemon(PokemonSpecies::Squirtle)};     // List of Pokemon player has caught
-       vector<Pokemon*> selectedTeam = {new Pokemon(PokemonSpecies::Bulbasaur), new Pokemon(PokemonSpecies::Charmander), new Pokemon(PokemonSpecies::Squirtle)};       // Player's team (3 Pokemon)
+       vector<Pokemon*> caughtPokemons;     // List of Pokemon player has caught
+       vector<Pokemon*> selectedTeam;       // Player's team (3 Pokemon)
        Inventory* myInventory;
 
    public:
-        Player() : money(0), myInventory(new Inventory()), isEnded(false) {}
-        Player(int mon, Inventory* myInven) : money(mon), myInventory(myInven), isEnded(false){}
+        Player() : money(0), myInventory(new Inventory()), isEnded(false) {
+            Pokemon* startPokemon1= new Pokemon(PokemonSpecies::Bulbasaur);
+            Pokemon* startPokemon2= new Pokemon(PokemonSpecies::Charmander);
+            Pokemon* startPokemon3= new Pokemon(PokemonSpecies::Squirtle);
+            caughtPokemons.push_back(startPokemon1);
+            caughtPokemons.push_back(startPokemon2);
+            caughtPokemons.push_back(startPokemon3);
+            for(int i=0;i<caughtPokemons.size();i++){
+                selectedTeam.push_back(caughtPokemons.at(i));
+            }
+        }
+        Player(int mon, Inventory* myInven) : money(mon), myInventory(myInven), isEnded(false){
+            Pokemon* startPokemon1= new Pokemon(PokemonSpecies::Bulbasaur);
+            Pokemon* startPokemon2= new Pokemon(PokemonSpecies::Charmander);
+            Pokemon* startPokemon3= new Pokemon(PokemonSpecies::Squirtle);
+            caughtPokemons.push_back(startPokemon1);
+            caughtPokemons.push_back(startPokemon2);
+            caughtPokemons.push_back(startPokemon3);
+
+            for(int i=0;i<caughtPokemons.size();i++){
+                selectedTeam.push_back(caughtPokemons.at(i));
+            }
+        }
         ~Player();
         int getMoney() const;
         string getName() const;

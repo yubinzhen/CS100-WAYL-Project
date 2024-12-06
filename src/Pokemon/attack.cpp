@@ -422,16 +422,15 @@ int Attack::calculateDamage(Pokemon attacker, Pokemon defender) const{//this is 
     else if(attacker.isTypeNotEffective(defender)){
         damage*=0.5;
     }
-    srand(time(0));
     if(rand()%10000<=625){
         damage*=1.5;
     }
+    cout << damage*(85+rand()%30)/100 <<endl;
     return damage*(85+rand()%30)/100;
 }
 
 void Attack::displayInfo() const {//display the information for the move
-        cout << "Move Name: " << getName(getMoves())
-                  << "\nPower: " << getpower() << "\n";
+        cout << "Move Name: " << getName(getMoves()) << "\n";
 }
 
 moves Attack::getMoves() const{

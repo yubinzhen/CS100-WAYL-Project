@@ -46,6 +46,7 @@ Pokemon::Pokemon(PokemonSpecies sp, int lvl, int EXP, int iv, moves m1, moves m2
 }
 
 void Pokemon::initializeStats(PokemonSpecies sp){
+    species=sp;
     switch(sp){
     case PokemonSpecies::Bulbasaur:
         type = PokemonType::Grass;

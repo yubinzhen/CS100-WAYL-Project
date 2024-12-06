@@ -6,13 +6,13 @@
 
 using namespace std;
 
-Battle::Battle(Player* p, WildPokemon* wp) 
-    : player(p), wildPokemon(wp), isPlayerTurn(true) {
-    pokemon1CurrHealth = player->getTeam()[0]->calculateHP();
-    pokemon2CurrHealth = player->getTeam()[1]->calculateHP();
-    pokemon3CurrHealth = player->getTeam()[2]->calculateHP();
-    wildPokemonCurrHealth = wp->calculateHP();
-    activePokemon = player->getTeam()[0];
+Battle::Battle(vector<Pokemon*>& t) 
+    :isPlayerTurn(true) {
+    team = t;
+    pokemon1CurrHealth = t[0]->calculateHP();
+    pokemon2CurrHealth = t[1]->calculateHP();
+    pokemon3CurrHealth = t[2]->calculateHP();
+    activePokemon = t[0];
     activePokemonHealth = activePokemon->calculateHP();
 }
 
@@ -49,7 +49,7 @@ void Battle::battleMenu() {
         }
 
         if (choice == 1) {
-            viewItems();
+            //viewItems();
         } else if (choice == 2) {
             startBattle();
         } else if (choice == 3) {
@@ -89,39 +89,7 @@ void Battle::startBattle() {
     } else {
         wildPokemon = new WildPokemon(3);
     }
-    
-    cout << "A wild " << wildPokemon->speciesToString(wildPokemon->getSpecies()) << " appeared!" << endl;
     wildPokemonCurrHealth = wildPokemon->calculateHP();
-
-    int pokemonChoice;
-    cout << "Which Pokemon do you want to use?" << endl;
-    cout << "1. " << player->getPokemon1Name() << endl;
-    //cout << "2. " << player->getPokemon2Name() << endl;
-    //cout << "3. " << player->getPokemon3Name() << endl;
-
-    /*for (size_t i = 0; i < player->getTeam().size(); ++i) {
-        cout << i + 1 << ". " << player->getTeam()[i]->speciesToString(player->getTeam()[i]->getSpecies()) << endl;
-    }*/
-
-    cin >> pokemonChoice;
-
-    while (!cin || pokemonChoice <= 0 || pokemonChoice >= 4) {
-        cout << "Invalid input" << endl;
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cin >> pokemonChoice; 
-    }
-
-    if (pokemonChoice == 1) {
-        activePokemon = player->getTeam()[0];
-        int activePokemonHealth = pokemon1CurrHealth;
-    } else if (pokemonChoice == 2) {
-        activePokemon = player->getTeam()[1];
-        int activePokemonHealth = pokemon2CurrHealth;
-    } else {
-        activePokemon = player->getTeam()[2];
-        int activePokemonHealth = pokemon3CurrHealth;
-    }
 
     while (!checkBattleEnd()) {
         if (isPlayerTurn) {
@@ -136,40 +104,80 @@ void Battle::startBattle() {
 
 
 void Battle::playerTurn() {
-    cout << "It's your turn!\n";
-
-    battleMenu(); // Display the menu options
-
-    // Simulate move selection for simplicity (can be expanded with more menu choices)
-    cout << "Choose a move to attack:" << endl;
-    
-    cout << "1. ";
-    activePokemon->getMove1()->displayInfo();
-    cout << endl;
-    cout << "2. ";
-    activePokemon->getMove2()->displayInfo();
-    cout << endl;
-    cout << "3. "; 
-    activePokemon->getMove3()->displayInfo();
-    cout << endl;
-
-    int moveChoice;
-    cin >> moveChoice;
-
-    while (!cin || moveChoice < 1 || moveChoice > 3) {
-        cout << "Invalid input. Choose again:\n";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cin >> moveChoice;
-    }
-
+    cout << "\nIt's your turn!\n-----------------------------------------------";
+    bool flag= true;
+    int choice;
     Attack* selectedMove = nullptr;
-    if (moveChoice == 1) {
-        selectedMove = activePokemon->getMove1();
-    } else if (moveChoice == 2) {
-        selectedMove = activePokemon->getMove2();
-    } else if (moveChoice == 3) {
-        selectedMove = activePokemon->getMove3();
+    while(flag){
+        cout << "\nChoose option:\n" << endl;
+        cout << "1. Swap Pokemon" << endl;
+        cout << "2. Choose a move" << endl;
+        cin >> choice;
+
+        while (!cin || choice <= 0 || choice >= 3) {
+            cout << "Invalid input" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin >> choice; 
+        }
+        if(choice == 1){
+            cout << "Which Pokemon do you want to use?" << endl;
+            cout << "1. " << team[0]->speciesToString(team[0]->getSpecies()) << endl;
+            cout << "2. " << team[1]->speciesToString(team[1]->getSpecies()) << endl;
+            cout << "3. " << team[2]->speciesToString(team[2]->getSpecies()) << endl;
+            cin >> choice;
+            while (!cin || choice <= 0 || choice >= 4) {
+                cout << "Invalid input" << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin >> choice; 
+            }
+            if (choice == 1) {
+                activePokemon = team[0];
+                cout << team[0]->speciesToString(team[0]->getSpecies()) << "is active now" << endl;
+                activePokemonHealth = pokemon1CurrHealth;
+            } else if (choice == 2) {
+                activePokemon = team[1];
+                cout << team[1]->speciesToString(team[1]->getSpecies()) << "is active now" << endl;
+                activePokemonHealth = pokemon2CurrHealth;
+            } else {
+                activePokemon = team[2];
+                cout << team[2]->speciesToString(team[2]->getSpecies()) << "is active now" << endl;
+                activePokemonHealth = pokemon3CurrHealth;
+            } 
+        }
+        else{
+            cout << "Choose a move to attack:" << endl;
+    
+            cout << "1. ";
+            activePokemon->getMove1()->displayInfo();
+            cout << endl;
+            cout << "2. ";
+            activePokemon->getMove2()->displayInfo();
+            cout << endl;
+            cout << "3. "; 
+            activePokemon->getMove3()->displayInfo();
+            cout << endl;
+
+            int moveChoice;
+            cin >> moveChoice;
+
+            while (!cin || moveChoice < 1 || moveChoice > 3) {
+                cout << "Invalid input. Choose again:\n";
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin >> moveChoice;
+            }
+            if (moveChoice == 1) {
+                selectedMove = activePokemon->getMove1();
+            } else if (moveChoice == 2) {
+                selectedMove = activePokemon->getMove2();
+            } else if (moveChoice == 3) {
+                selectedMove = activePokemon->getMove3();
+            }
+            flag = false;
+        }
+
     }
 
     // Display the attack message
@@ -195,7 +203,7 @@ void Battle::wildPokemonTurn() {
 
     Attack* chosenMove = wildPokemon->wildPokemonMove(*activePokemon);
 
-    cout << wildPokemon->speciesToString(wildPokemon->getSpecies()) << " used " << chosenMove->getName() << "!\n";
+    cout << wildPokemon->speciesToString(wildPokemon->getSpecies()) << " used " << chosenMove->getName(chosenMove->getMoves()) << "!\n";
 
     // Calculate damage to the player's active Pokémon
     int damage = chosenMove->calculateDamage(*wildPokemon, *activePokemon);
@@ -212,42 +220,42 @@ bool Battle::isCatchable() const {
     return wildPokemon->getBaseHP() < 40;
 }
 
-bool Battle::isCatchSuccess(const Pokeball& pokeball) {
-    if (isCatchable()) {
-        int baseChance = 70;
-        double modifiedChance = baseChance * pokeball.getCatchMultiplyer();
-        int chance = randomNum(1, 100);
-        if (chance <= modifiedChance) {
-            player->addPokemon(wildPokemon);
-            wildPokemon->setBaseHP(0);
-            cout << "You just caught the Pokemon!" << endl;
-            endBattle();
-            return true;
-        } else {
-            cout << "The Pokemon broke out of the Pokeball!" << endl;
-            return false;
-        }
-    } else {
-        cout << "The Pokemon is too strong to catch!" << endl;
-        return false;
-    }
-}
+// bool Battle::isCatchSuccess(const Pokeball& pokeball) {
+//     if (isCatchable()) {
+//         int baseChance = 70;
+//         double modifiedChance = baseChance * pokeball.getCatchMultiplyer();
+//         int chance = randomNum(1, 100);
+//         if (chance <= modifiedChance) {
+//             player->addPokemon(wildPokemon);
+//             wildPokemon->setBaseHP(0);
+//             cout << "You just caught the Pokemon!" << endl;
+//             endBattle();
+//             return true;
+//         } else {
+//             cout << "The Pokemon broke out of the Pokeball!" << endl;
+//             return false;
+//         }
+//     } else {
+//         cout << "The Pokemon is too strong to catch!" << endl;
+//         return false;
+//     }
+// }
 
-void Battle::viewItems() const {
-    player->viewItems();
-}
+// void Battle::viewItems() const {
+//     player->viewItems();
+// }
 
-void Battle::viewTeam() const {
-    vector<Pokemon*> team = player->getTeam();
-    cout << "Your team: " << endl;
-    for (int i=0; i<team.size(); i++) {
-        cout << i+1 << ". " << endl;
-        team[i]->displayInfo();
-    }
-}
+// void Battle::viewTeam() const {
+//     vector<Pokemon*> team = player->getTeam();
+//     cout << "Your team: " << endl;
+//     for (int i=0; i<team.size(); i++) {
+//         cout << i+1 << ". " << endl;
+//         team[i]->displayInfo();
+//     }
+// }
 
 void Battle::endBattle() {
-    if (player->getTeam()[0]->getBaseHP() <= 0) {
+    if (team[0]->getBaseHP() <= 0) {
         cout << "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////" << endl;
         cout << " __________________________________________________________________________" << endl;
         cout << "|                                                                          |" << endl;
