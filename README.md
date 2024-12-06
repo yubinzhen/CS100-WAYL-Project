@@ -44,17 +44,13 @@ This is the first screen the user will see, which displays the name of the game 
 
 This screen provides the user with 5 main options. The user can choose to (1) go to the Inventory screen, (2) the Store screen, or (3) search for Pokemon which leads to the Battle Menu Screen. The user can also (4) view the Pokemon they own or (5) log the user out by exiting the program and returning to the initial screen.
 
-![image](https://github.com/user-attachments/assets/03ac82d7-ec2b-4411-835b-a17714f6c033)
+![image](https://github.com/user-attachments/assets/1fa5dc71-b096-41c7-afb8-48cd5ffc03a7)
 
 This screen displays the user's currently owned items.
 
 ![image](https://github.com/user-attachments/assets/6f3df295-fa4c-4a71-8586-01c355172711)
 
 This screen displays the Pokemon they have in storage, and the user can (1) view the stats of a specific pokemon, (2) view or change the pokemon they have in their current battle team, or (3) go back to the previous screen. This screen's options may vary depending on if the user originates from the menu screen or battle menu screen.
-
-![Screenshot 2024-11-21 233540](https://github.com/user-attachments/assets/41facd8d-d847-4e21-a3dd-e77c4b92c179)
-
-This screen displays the items that the user has, and the user can (1) view the stats of a specific item or (2) go back to the previous screen. This screen's options may vary depending on if the user originates from the menu screen or battle menu screen.
 
 ![Screenshot 2024-11-21 233546](https://github.com/user-attachments/assets/c2fbeef0-f09f-4438-bf55-67b114be9f99)
 
