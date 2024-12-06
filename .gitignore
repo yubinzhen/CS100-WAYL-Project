@@ -21,5 +21,3 @@ bin/*
 CMakeCache.txt
 
 cmake_install.cmake
-
-testAll
