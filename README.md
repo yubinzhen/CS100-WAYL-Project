@@ -82,15 +82,18 @@ This is the screen the user will see if they lost a Pokemon battle. They are giv
 ![image](https://github.com/user-attachments/assets/4a27e484-17d4-4ddf-9a21-44b580059875)
 
 
-* Main: Manages the game session, linking the Player and WildPokemon instances. 
-* Player: Manages the player's team, money, and experience, as well as interactions with the Inventory.
+* Main: Manages the game session, offering a save and load feature. 
+* Player: Manages the player's team, money, and experience, as well as interactions with the Inventory and PC.
 * Pokemon: Represents basic Pokémon attributes and actions.
 * Attack: Represents each attack for Pokemon. Each Pokemon has four abilities. 
 * WildPokemon: Extends Pokemon with scaling and random action capabilities.
 * Battle: Manages the battle flow, handling player actions and random wild Pokémon responses.
 * Inventory: Manages items the player has collected and allows item use as well as purchase and sell items.
 * Item: Represents each item in the game, with methods to apply its effect to a Pokemon.
-* PC: Manages the player's Pokemon and team.
+* PokemonSpecies: Represents all Pokemon.
+* GrowthRate: Represents how fast the Pokemon level up.
+* PokemonType: Represents the Pokemon types.
+* moves: Represents the Pokemon moves.
 
 One SOLID principle we applied to the new class diagram was the Single Responsibility. One way we applied it was by removing the feature to access and edit the player’s Pokemon and implementing a separate class, PC, to address that feature. These changes make the code less complex, giving a well-organized, intuitive codebase that allows for better readability.
 
