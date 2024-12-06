@@ -25,10 +25,13 @@ class Inventory
         void viewMyItems();
         void store();
         void storeItems();
-        void addItem(Item* );
         void buyItem();
         void sellItem();
-        void accessPC();
         void addMoney(int );
         int getMoney();
+        int selectOptionHelper1();
+        bool selectOptionHelper2();
+        int clearInputHelper();
+        int amountHelper();
+        Item* getItem(int );
 };

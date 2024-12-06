@@ -4,8 +4,6 @@ CMakeLists.txt
 
 .gitmodules
 
-Tests/
-
 CMakeFiles/*
 
 Makefile
@@ -21,3 +19,7 @@ bin/*
 CMakeCache.txt
 
 cmake_install.cmake
+
+main.cpp
+
+test_program

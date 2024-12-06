@@ -41,10 +41,7 @@ void Inventory::store()
         while (cin.fail() || choice < 1 || choice > 4)
         {
             cout << "Invalid option. Try again: ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cin >> choice;
-            cout << endl;
+            choice = clearInputHelper();
         }
         if (choice == 1)
         {
@@ -105,19 +102,7 @@ void Inventory::buyItem()
         cout << "(9) Go Back" << endl << endl;
         cout << "Current Balance: " << getMoney() << "¥" << endl << endl;
         cout << "Select which item to buy: ";
-        cin >> i;
-        --i;
-        cout << endl;
-
-        while (cin.fail() || i < 0 || i > 8)
-        {
-            cout << "Invalid option. Try again: ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cin >> i;
-            --i;
-            cout << endl;
-        }
+        i = selectOptionHelper1();
 
         if (i == 8)
         {
@@ -125,18 +110,7 @@ void Inventory::buyItem()
         }
         else
         {
-            cout << "Enter amount: ";
-            cin >> amount;
-
-            while (cin.fail() || amount < 1)
-            {
-                cout << "Invalid amount. Try again: ";
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin >> i;
-                --i;
-                cout << endl;
-            }
+            amount = amountHelper();
 
             if (items.at(i)->getPrice() * amount > money)
             {
@@ -150,28 +124,8 @@ void Inventory::buyItem()
                 cout << "Item(s) added!" << endl << endl;
             }
         }
-
-        cout << "(1) Purchase another item" << endl;
-        cout << "(2) Go Back" << endl;
-        cout << "Select an option: ";
-
-        cin >> i;
-        cout << endl; 
-
-        while (cin.fail() || i < 1 || i > 2)
-        {
-            cout << "Invalid option. Try again: ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cin >> i;
-            --i;
-            cout << endl;
-        }
-
-        if (i == 2)
-        {
-            flag = false;
-        }
+        cout << "(1) Buy another item" << endl;
+        flag = selectOptionHelper2();
     }
 }
 
@@ -187,20 +141,8 @@ void Inventory::sellItem()
         cout << "(9) Go Back" << endl << endl;
         cout << "Current Balance: " << getMoney() << "¥" << endl << endl;
         cout << "Select which item to sell: ";
-        cin >> i;
-        --i;
-        cout << endl;
 
-
-        while (cin.fail() || i < 0 || i > 8)
-        {
-            cout << "Invalid option. Try again: ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cin >> i;
-            --i;
-            cout << endl;
-        }
+        i = selectOptionHelper1();
 
         if (i == 8)
         {
@@ -208,19 +150,8 @@ void Inventory::sellItem()
         }
         else
         {
-            cout << "Enter amount: ";
-            cin >> amount;
-
-            while (cin.fail() || amount < 1)
-            {
-                cout << "Invalid amount. Try again: ";
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin >> i;
-                --i;
-                cout << endl;
-            }
-
+            amount = amountHelper();
+            
             if (items.at(i)->getAmount() < amount)
             {
                 cout << "Insufficient amount." << endl << endl;
@@ -233,27 +164,7 @@ void Inventory::sellItem()
             }
         } 
         cout << "(1) Sell another item" << endl;
-        cout << "(2) Go Back" << endl;
-        cout << "Current Balance: " << getMoney() << "¥" << endl;
-        cout << "Select an option: ";
-
-        cin >> i;
-        cout << endl; 
-
-        while (cin.fail() || i < 1 || i > 2)
-        {
-            cout << "Invalid option. Try again: ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cin >> i;
-            --i;
-            cout << endl;
-        }
-
-        if (i == 2)
-        {
-            flag = false;
-        }       
+        flag = selectOptionHelper2();
     }
 }
 
@@ -267,12 +178,82 @@ int Inventory::getMoney()
     return money;
 }
 
-void Inventory::addItem(Item* newItem)
+int Inventory::clearInputHelper()
 {
-    cout << "Implement addItem()" << endl;
+    int i = 0;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin >> i;
+    --i;
+    cout << endl;
+
+    return i;
 }
 
-void Inventory::accessPC()
+int Inventory::selectOptionHelper1()
 {
-    cout << "Implement accessPC()" << endl;
+    int i = 0;
+
+    cin >> i;
+    --i;
+    cout << endl;
+
+
+    while (cin.fail() || i < 0 || i > 8)
+    {
+        cout << "Invalid option. Try again: ";
+        i = clearInputHelper();
+    }
+
+    return i;
+}
+
+int Inventory::amountHelper()
+{
+    int amount = 0;
+    cout << "Enter amount: ";
+    cin >> amount;
+
+    while (cin.fail() || amount < 1)
+    {
+        cout << "Invalid amount. Try again: ";
+        amount = clearInputHelper();
+    }
+
+    return amount;
+}
+
+bool Inventory::selectOptionHelper2()
+{
+    bool flag = true;
+    int i = 0;
+    cout << "(2) Go Back" << endl;
+    cout << "Current Balance: " << getMoney() << "¥" << endl;
+    cout << "Select an option: ";
+
+    cin >> i;
+    cout << endl; 
+
+    while (cin.fail() || i < 1 || i > 2)
+    {
+        cout << "Invalid option. Try again: ";
+        i = clearInputHelper();
+    }
+
+    if (i == 2)
+    {
+        flag = false;
+    }
+
+    return flag;
+}
+
+Item* Inventory::getItem(int i)
+{
+    if (i < 0 || i > 7)
+    {
+        return nullptr;
+    }
+
+    return items.at(i);
 }
