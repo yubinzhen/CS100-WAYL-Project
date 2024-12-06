@@ -4,8 +4,9 @@
 #include <iostream>
 
 Attack::Attack() : name(moves::None), type(PokemonType::Normal), power(0) {} //default constructor
-Attack::Attack(moves name){//constructor for every moves
-    switch (name) {
+Attack::Attack(moves moveName){//constructor for every moves
+    name = moveName;
+    switch (moveName) {
         case moves::FireSpin:
             type = PokemonType::Fire;
             power = 35;
@@ -327,88 +328,86 @@ Attack::Attack(moves name){//constructor for every moves
 
 
 
-string Attack::getName() const {//use this function to get the name of the moves
-    switch (name) {
-        case moves::FireSpin: return "Fire Spin";
-        case moves::Flamethrower: return "Flamethrower";
-        case moves::FireBlast: return "Fire Blast";
-        case moves::Ember: return "Ember";
-        case moves::FirePunch: return "Fire Punch";
-        case moves::Absorb: return "Absorb";
-        case moves::LeechSeed: return "Leech Seed";
-        case moves::MegaDrain: return "Mega Drain";
-        case moves::PetalDance: return "Petal Dance";
-        case moves::RazorLeaf: return "Razor Leaf";
-        case moves::SleepPowder: return "Sleep Powder";
-        case moves::SolarBeam: return "Solar Beam";
-        case moves::Spore: return "Spore";
-        case moves::StunSpore: return "Stun Spore";
-        case moves::VineWhip: return "Vine Whip";
-        case moves::Clamp: return "Clamp";
-        case moves::Crabhammer: return "Crabhammer";
-        case moves::HydroPump: return "Hydro Pump";
-        case moves::Surf: return "Surf";
-        case moves::WaterGun: return "Water Gun";
-        case moves::Waterfall: return "Waterfall";
-        case moves::Withdraw: return "Withdraw";
-        case moves::Barrage: return "Barrage";
-        case moves::Bide: return "Bide";
-        case moves::Bind: return "Bind";
-        case moves::BodySlam: return "Body Slam";
-        case moves::CometPunch: return "Comet Punch";
-        case moves::Cut: return "Cut";
-        case moves::DefenseCurl: return "Defense Curl";
-        case moves::DizzyPunch: return "Dizzy Punch";
-        case moves::DoubleSlap: return "Double Slap";
-        case moves::DoubleEdge: return "Double-Edge";
-        case moves::EggBomb: return "Egg Bomb";
-        case moves::Explosion: return "Explosion";
-        case moves::FuryAttack: return "Fury Attack";
-        case moves::FurySwipes: return "Fury Swipes";
-        case moves::Glare: return "Glare";
-        case moves::Growl: return "Growl";
-        case moves::Growth: return "Growth";
-        case moves::Guillotine: return "Guillotine";
-        case moves::Harden: return "Harden";
-        case moves::Headbutt: return "Headbutt";
-        case moves::HornAttack: return "Horn Attack";
-        case moves::HornDrill: return "Horn Drill";
-        case moves::HyperBeam: return "Hyper Beam";
-        case moves::HyperFang: return "Hyper Fang";
-        case moves::Leer: return "Leer";
-        case moves::LovelyKiss: return "Lovely Kiss";
-        case moves::MegaKick: return "Mega Kick";
-        case moves::MegaPunch: return "Mega Punch";
-        case moves::Pound: return "Pound";
-        case moves::QuickAttack: return "Quick Attack";
-        case moves::Rage: return "Rage";
-        case moves::RazorWind: return "Razor Wind";
-        case moves::Recover: return "Recover";
-        case moves::Scratch: return "Scratch";
-        case moves::Screech: return "Screech";
-        case moves::SelfDestruct: return "Self-Destruct";
-        case moves::Sharpen: return "Sharpen";
-        case moves::Sing: return "Sing";
-        case moves::SkullBash: return "Skull Bash";
-        case moves::Slam: return "Slam";
-        case moves::Slash: return "Slash";
-        case moves::SoftBoiled: return "Soft-Boiled";
-        case moves::SonicBoom: return "Sonic Boom";
-        case moves::SpikeCannon: return "Spike Cannon";
-        case moves::Splash: return "Splash";
-        case moves::Stomp: return "Stomp";
-        case moves::Strength: return "Strength";
-        case moves::SuperFang: return "Super Fang";
-        case moves::Supersonic: return "Supersonic";
-        case moves::SwordsDance: return "Swords Dance";
-        case moves::Tackle: return "Tackle";
-        case moves::TailWhip: return "Tail Whip";
-        case moves::TakeDown: return "Take Down";
-        case moves::Thrash: return "Thrash";
-        case moves::ViseGrip: return "Vise Grip";
-        case moves::Wrap: return "Wrap";
-        default: return "Unknown Move";
-    }
+string Attack::getName(moves name) const {//use this function to get the name of the moves
+if (name == moves::FireSpin) return "Fire Spin";
+else if (name == moves::Flamethrower) return "Flamethrower";
+else if (name == moves::FireBlast) return "Fire Blast";
+else if (name == moves::Ember) return "Ember";
+else if (name == moves::FirePunch) return "Fire Punch";
+else if (name == moves::Absorb) return "Absorb";
+else if (name == moves::LeechSeed) return "Leech Seed";
+else if (name == moves::MegaDrain) return "Mega Drain";
+else if (name == moves::PetalDance) return "Petal Dance";
+else if (name == moves::RazorLeaf) return "Razor Leaf";
+else if (name == moves::SleepPowder) return "Sleep Powder";
+else if (name == moves::SolarBeam) return "Solar Beam";
+else if (name == moves::Spore) return "Spore";
+else if (name == moves::StunSpore) return "Stun Spore";
+else if (name == moves::VineWhip) return "Vine Whip";
+else if (name == moves::Clamp) return "Clamp";
+else if (name == moves::Crabhammer) return "Crabhammer";
+else if (name == moves::HydroPump) return "Hydro Pump";
+else if (name == moves::Surf) return "Surf";
+else if (name == moves::WaterGun) return "Water Gun";
+else if (name == moves::Waterfall) return "Waterfall";
+else if (name == moves::Withdraw) return "Withdraw";
+else if (name == moves::Barrage) return "Barrage";
+else if (name == moves::Bide) return "Bide";
+else if (name == moves::Bind) return "Bind";
+else if (name == moves::BodySlam) return "Body Slam";
+else if (name == moves::CometPunch) return "Comet Punch";
+else if (name == moves::Cut) return "Cut";
+else if (name == moves::DefenseCurl) return "Defense Curl";
+else if (name == moves::DizzyPunch) return "Dizzy Punch";
+else if (name == moves::DoubleSlap) return "Double Slap";
+else if (name == moves::DoubleEdge) return "Double-Edge";
+else if (name == moves::EggBomb) return "Egg Bomb";
+else if (name == moves::Explosion) return "Explosion";
+else if (name == moves::FuryAttack) return "Fury Attack";
+else if (name == moves::FurySwipes) return "Fury Swipes";
+else if (name == moves::Glare) return "Glare";
+else if (name == moves::Growl) return "Growl";
+else if (name == moves::Growth) return "Growth";
+else if (name == moves::Guillotine) return "Guillotine";
+else if (name == moves::Harden) return "Harden";
+else if (name == moves::Headbutt) return "Headbutt";
+else if (name == moves::HornAttack) return "Horn Attack";
+else if (name == moves::HornDrill) return "Horn Drill";
+else if (name == moves::HyperBeam) return "Hyper Beam";
+else if (name == moves::HyperFang) return "Hyper Fang";
+else if (name == moves::Leer) return "Leer";
+else if (name == moves::LovelyKiss) return "Lovely Kiss";
+else if (name == moves::MegaKick) return "Mega Kick";
+else if (name == moves::MegaPunch) return "Mega Punch";
+else if (name == moves::Pound) return "Pound";
+else if (name == moves::QuickAttack) return "Quick Attack";
+else if (name == moves::Rage) return "Rage";
+else if (name == moves::RazorWind) return "Razor Wind";
+else if (name == moves::Recover) return "Recover";
+else if (name == moves::Scratch) return "Scratch";
+else if (name == moves::Screech) return "Screech";
+else if (name == moves::SelfDestruct) return "Self-Destruct";
+else if (name == moves::Sharpen) return "Sharpen";
+else if (name == moves::Sing) return "Sing";
+else if (name == moves::SkullBash) return "Skull Bash";
+else if (name == moves::Slam) return "Slam";
+else if (name == moves::Slash) return "Slash";
+else if (name == moves::SoftBoiled) return "Soft-Boiled";
+else if (name == moves::SonicBoom) return "Sonic Boom";
+else if (name == moves::SpikeCannon) return "Spike Cannon";
+else if (name == moves::Splash) return "Splash";
+else if (name == moves::Stomp) return "Stomp";
+else if (name == moves::Strength) return "Strength";
+else if (name == moves::SuperFang) return "Super Fang";
+else if (name == moves::Supersonic) return "Supersonic";
+else if (name == moves::SwordsDance) return "Swords Dance";
+else if (name == moves::Tackle) return "Tackle";
+else if (name == moves::TailWhip) return "Tail Whip";
+else if (name == moves::TakeDown) return "Take Down";
+else if (name == moves::Thrash) return "Thrash";
+else if (name == moves::ViseGrip) return "Vise Grip";
+else if (name == moves::Wrap) return "Wrap";
+else return "Unknown Move";
 }
 
 int Attack::getpower() const {
@@ -431,6 +430,10 @@ int Attack::calculateDamage(Pokemon attacker, Pokemon defender) const{//this is 
 }
 
 void Attack::displayInfo() const {//display the information for the move
-        cout << "Move Name: " << getName()
+        cout << "Move Name: " << getName(getMoves())
                   << "\nPower: " << getpower() << "\n";
+}
+
+moves Attack::getMoves() const{
+    return name;
 }

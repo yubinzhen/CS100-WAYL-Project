@@ -1,9 +1,10 @@
 #pragma once
+
 enum class moves {
-    FireSpin, 
-    Flamethrower, 
-    FireBlast, 
-    Ember, 
+    FireSpin,
+    Flamethrower,
+    FireBlast,
+    Ember,
     FirePunch,
     Absorb,
     LeechSeed,
@@ -79,4 +80,4 @@ enum class moves {
     ViseGrip,
     Wrap,
     None
-};
+}; // Ensure there's a semicolon here

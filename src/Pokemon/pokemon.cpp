@@ -13,34 +13,25 @@ Pokemon::Pokemon(PokemonSpecies sp): species(sp){//constructor for all pokemon
     IV=rand()%31;
     vector<moves> selectedMoves;
     if (type != PokemonType::Normal) {
-        vector<moves> availableMoves;  // This will hold the type-specific moves
-
-        // Populate availableMoves based on the Pokémon type
-        if (type == PokemonType::Fire) {
-            availableMoves = fireTypeMoves;
-        } else if (type == PokemonType::Water) {
-            availableMoves = waterTypeMoves;
-        } else if (type == PokemonType::Grass) {
-            availableMoves = grassTypeMoves;
+        if(type == PokemonType::Fire){
+            selectedMoves.push_back(fireTypeMoves[rand()%fireTypeMoves.size()]); 
+            selectedMoves.push_back(fireTypeMoves[rand()%fireTypeMoves.size()]);
         }
-
-        // Shuffle the available moves for random selection
-        std::random_device rd;
-        std::mt19937 g(rd());
-        std::shuffle(availableMoves.begin(), availableMoves.end(), g);
-
-        // Select the first two random moves of the same type
-        selectedMoves.push_back(availableMoves[0]);
-        selectedMoves.push_back(availableMoves[1]);
+        else if(type == PokemonType::Water){
+            selectedMoves.push_back(waterTypeMoves[rand()%waterTypeMoves.size()]); 
+            selectedMoves.push_back(waterTypeMoves[rand()%waterTypeMoves.size()]);
+        }
+        else if(type == PokemonType::Grass){
+            selectedMoves.push_back(grassTypeMoves[rand()%grassTypeMoves.size()]); 
+            selectedMoves.push_back(grassTypeMoves[rand()%grassTypeMoves.size()]); 
+        }
     }
-
-    // Add one random normal-type move
     selectedMoves.push_back(normalTypeMoves[rand() % normalTypeMoves.size()]);
-
-    // Initialize moves
     move1 = new Attack(selectedMoves[0]); 
     move2 = new Attack(selectedMoves[1]); 
     move3 = new Attack(selectedMoves[2]); 
+
+
 }
 Pokemon::Pokemon(PokemonSpecies sp, int lvl, int EXP, int iv, moves m1, moves m2, moves m3){//constructor for all pokemon
     species=sp;
@@ -523,9 +514,9 @@ void Pokemon::displayInfo() {
                   << "\nHP: " << calculateHP()
                   << "\nBase Attack: " << baseAttack
                   << "\nBase Defense: " << baseDefense 
-                  << "\n Move 1 name: " << move1->getName()
-                  << "\n Move 2 name: " << move2->getName()
-                  << "\n Move 3 name: " << move3->getName()<< "\n";
+                  << "\n Move 1 name: " << move1->getName(move1->getMoves())
+                  << "\n Move 2 name: " << move2->getName(move2->getMoves())
+                  << "\n Move 3 name: " << move3->getName(move3->getMoves())<< "\n";
 }
 
 bool Pokemon::isTypeEffective(Pokemon defender) {
