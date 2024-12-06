@@ -23,7 +23,7 @@ class Player {
         ~Player();
        int getMoney() const;
        string getName() const;
-       vector<Pokemon*> getCaughtPokemon() const;
+       vector<Pokemon*> getCaughtPokemon() const;   
        vector<Pokemon*> getCaughtPokemon();
        void addPokemon(Pokemon* p);
        vector<Pokemon*> getTeam() const;
@@ -35,5 +35,5 @@ class Player {
        void displayPCMenu();
         void viewPokemonStats();
         void viewEditPokemonTeam();
-       
+        
 };

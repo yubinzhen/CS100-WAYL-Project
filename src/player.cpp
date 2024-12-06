@@ -5,7 +5,8 @@ using namespace std;
 
 
 Player::~Player() {
-   delete myInventory;
+   //delete myInventory;
+   
    for (Pokemon* p : caughtPokemons) {
       delete p;
    }
@@ -179,7 +180,6 @@ void Player::viewEditPokemonTeam() {
     }
 
     cout << "Currently owned Pokemon:" << endl;
-
     // Display all caught Pokemon
     for (int i = 0; i < getCaughtPokemon().size(); ++i) {
         cout << i + 1 << ". ";
@@ -220,20 +220,16 @@ void Player::viewEditPokemonTeam() {
         }
     }
 
-    // Replace the old team with the new selected team
-    for(int i=0; i<getTeam().size();i++){
-        getTeam().pop_back();
-    }
-    for(int i=0; i<selectedTeam.size();i++){
-        getTeam().push_back(selectedTeam.at(i));
-    }
+    // Now directly update the actual team
+    selectedTeam = selectedTeam; // This line is redundant but ensures clarity.
 
     // Display the updated team
     cout << "Your team has been replaced! Here is your new team:" << endl;
-    for (int i = 0; i < getTeam().size(); ++i) {
+    for (int i = 0; i < selectedTeam.size(); ++i) {
         cout << i + 1 << ". ";
-        getTeam().at(i)->displayInfo();
+        selectedTeam.at(i)->displayInfo();
         cout << endl;
     }
 }
+
 
