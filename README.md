@@ -101,16 +101,17 @@ A second SOLID principle we applied was Liskov Substitution. For example, the St
 
 A third SOLID principle we applied to our new class diagram was Interface Segregation Principle (ISP). We applied this principle so users will not be forced to depend on interfaces they don’t use. For example, we created separate interfaces for different concerns. Our inventory class only manages items and money and does not enforce unrelated responsibilities to the class like battling. Our Pokemon class is focused mainly on the Pokemon’s actions and attributes and only our battle class contains battle logic. These changes allowed us to change things easily and made it easier to keep track of things.
 
- > ## Final deliverable
- > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history.
->  * Each team member should also submit the Individual Contributions Form on Canvas for this final phase. In this form, you need to fill in the names of all team members, the percentage of work contributed by each member for the final phase, and a description of their contributions. Remember that each team member should submit the form individually.
+ ## Final deliverable
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ <img width="956" alt="Screenshot 2024-12-06 at 3 13 23 PM" src="https://github.com/user-attachments/assets/88388f27-4028-4a83-a086-971e331f40b4">
+
+ <img width="951" alt="Screenshot 2024-12-06 at 3 15 02 PM" src="https://github.com/user-attachments/assets/29ef32f3-2b5b-4245-85cf-04a840e64c24">
+
+<img width="676" alt="Screenshot 2024-12-06 at 3 16 00 PM" src="https://github.com/user-attachments/assets/36e36e83-6b79-4760-b24e-be132c00f9f7">
+
+<img width="679" alt="Screenshot 2024-12-06 at 3 23 30 PM" src="https://github.com/user-attachments/assets/c3d3e678-97e9-4113-9d9a-844f509121f0">
+
  ## Installation/Usage
  Our program is terminal based, therefore to play our Pokemon role-playing game, the user will need to run the executable. Users are free to pick any option displayed on the terminal. 
  ## Testing
