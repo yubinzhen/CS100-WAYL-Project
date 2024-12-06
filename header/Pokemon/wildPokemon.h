@@ -1,3 +1,4 @@
+#pragma once
 #include "pokemon.h"
 class WildPokemon : public Pokemon{
     private:
@@ -20,8 +21,7 @@ class WildPokemon : public Pokemon{
             PokemonSpecies::Moltres, PokemonSpecies::Snorlax, PokemonSpecies::none
         };
         WildPokemon(int area);
-        int evaluateMoveEffectiveness();
     public:
-        void wildPokemonMove();
+        Attack* wildPokemonMove(Pokemon& opponent);
 
 };

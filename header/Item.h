@@ -1,5 +1,4 @@
-#ifndef ITEM_H
-#define ITEM_H
+#pragma once
 
 #include <string>
 #include <sstream>
@@ -25,5 +24,3 @@ class Item
         int getAmount();
         string getDescription();
 };
-
-#endif
