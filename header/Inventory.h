@@ -35,4 +35,7 @@ class Inventory
         int clearInputHelper();
         int amountHelper();
         bool useItems(string );
+        vector<Item*> getItems(){
+            return items;
+        }
 };

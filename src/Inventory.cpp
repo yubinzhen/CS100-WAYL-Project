@@ -64,6 +64,18 @@ void Inventory::store()
 
 void Inventory::viewMyItems()
 {
+     cout << "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////" << endl;
+    cout << " _____________________________________________________" << endl;
+    cout << "|                                                     |" << endl;
+    cout << "|     _______   _______   _____   _     _   _____     |" << endl;
+    cout << "|    |__   __| |__   __| |  ___| | \\   / | |  ___|    |" << endl;
+    cout << "|       | |       | |    | |___  |  \\ /  | | |___     |" << endl;
+    cout << "|       | |       | |    |  ___| | |\\ /| | |___  |    |" << endl;
+    cout << "|     __| |__     | |    | |___  | |   | |  ___| |    |" << endl;
+    cout << "|    |_______|    |_|    |_____| |_|   |_| |_____|    |" << endl;
+    cout << "|                                                     |" << endl;
+    cout << "|_____________________________________________________|" << endl;
+    cout << endl;
     cout << "Current Items:" << endl << endl;
 
     for (int i = 0; i < items.size(); ++i)
@@ -138,6 +150,7 @@ void Inventory::sellItem()
     while (flag)
     {
         viewMyItems();
+        
         cout << "(9) Go Back" << endl << endl;
         cout << "Current Balance: " << getMoney() << "¥" << endl << endl;
         cout << "Select which item to sell: ";

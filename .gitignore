@@ -21,3 +21,5 @@ CMakeCache.txt
 cmake_install.cmake
 
 main.cpp
+
+testAll

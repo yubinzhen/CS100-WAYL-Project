@@ -28,7 +28,6 @@ class Pokemon
         Attack* move1;
         Attack* move2;
         Attack* move3;
-         static std::map<PokemonType, std::vector<moves>> availableMoves;
     public:
         ~Pokemon(){
             delete move1;
@@ -36,6 +35,7 @@ class Pokemon
             delete move3;
         }
         Pokemon(PokemonSpecies sp);
+        Pokemon(PokemonSpecies sp, int lvl, int EXP, int iv, moves m1, moves m2, moves m3);
         Pokemon(){//default constructor
             species=PokemonSpecies::none;
             type = PokemonType::Normal;
@@ -103,12 +103,19 @@ class Pokemon
         int getBaseAttack();
         int getBaseDefense();
 
-        Attack* getMove1();
-        Attack* getMove2();
-        Attack* getMove3();
+        Attack* getMove1() const;
+        Attack* getMove2() const;
+        Attack* getMove3() const;
 
         PokemonSpecies getSpecies() const {
             return species;
+        }
+
+        int getEXP() const {
+            return exp;
+        }
+        int getIV() const {
+            return IV;
         }
 
 };
