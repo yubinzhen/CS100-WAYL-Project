@@ -6,6 +6,7 @@ Inventory::~Inventory()
     {
         delete items.at(i);
     }
+    
 }
 
 void Inventory::store()

@@ -23,8 +23,9 @@ class Attack {
         Attack();
         Attack(moves name);
 
-        string getName() const;//get name of the moves
+        string getName(moves name) const;//get name of the moves
         int getpower() const;//get the value of power
-        int calculateDamage(Pokemon attacker, Pokemon defender) const;//calculates the actual damage to the opponent
+        int calculateDamage(Pokemon* attacker, Pokemon* defender) const;//calculates the actual damage to the opponent
         void displayInfo() const;//display name and power
+        moves getMoves() const;
 };

@@ -5,7 +5,7 @@ using namespace std;
 
 
 Player::~Player() {
-   //delete myInventory;
+   delete myInventory;
    
    for (Pokemon* p : caughtPokemons) {
       delete p;
@@ -38,12 +38,16 @@ vector<Pokemon*> Player::getTeam(){
     return selectedTeam;
 }
 
-void Player::accessInventory() {
-   myInventory->viewMyItems();
+bool Player::accessInventory(string name) {
+   return myInventory->useItems(name);
 }
 
 void Player::enterBattle() {
-   Battle battle;
+    for(int i=0; i<selectedTeam.size();i++){
+        selectedTeam.at(i)->displayInfo();
+        cout << endl;
+    }
+   Battle battle = Battle(selectedTeam);
    battle.battleMenu();
 }
 
@@ -82,7 +86,7 @@ void Player::menu() {
    }
    
    if (choice == 1) {
-      accessInventory();
+      accessStore();
    } else if (choice == 2) {
       myInventory->store();
    } else if (choice == 3) {
@@ -232,4 +236,12 @@ void Player::viewEditPokemonTeam() {
     }
 }
 
+void Player::accessStore()
+{
+   myInventory->store();
+}
 
+void Player::viewItems()
+{
+   myInventory->viewMyItems();
+}
