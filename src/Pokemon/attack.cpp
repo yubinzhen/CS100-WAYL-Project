@@ -414,18 +414,17 @@ int Attack::getpower() const {
     return power;
 }
 
-int Attack::calculateDamage(Pokemon attacker, Pokemon defender) const{//this is the actual damage that will do to the opponent
-    int damage = ((2*attacker.getLevel()/5+2)*(power*attacker.calculateAttack()/defender.calculateDefense())/50+2);
-    if(attacker.isTypeEffective(defender)){
+int Attack::calculateDamage(Pokemon* attacker, Pokemon* defender) const{//this is the actual damage that will do to the opponent
+    int damage = ((2*attacker->getLevel()/5+2)*(power*attacker->calculateAttack()/defender->calculateDefense())/50+2);
+    if(attacker->isTypeEffective(defender)){
         damage*=2;
     }
-    else if(attacker.isTypeNotEffective(defender)){
+    else if(attacker->isTypeNotEffective(defender)){
         damage*=0.5;
     }
     if(rand()%10000<=625){
         damage*=1.5;
     }
-    cout << damage*(85+rand()%30)/100 <<endl;
     return damage*(85+rand()%30)/100;
 }
 

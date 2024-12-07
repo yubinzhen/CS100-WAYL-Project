@@ -19,26 +19,29 @@ class Player {
 
    public:
         Player() : money(0), myInventory(new Inventory()), isEnded(false) {
-            Pokemon* startPokemon1= new Pokemon(PokemonSpecies::Bulbasaur);
-            Pokemon* startPokemon2= new Pokemon(PokemonSpecies::Charmander);
-            Pokemon* startPokemon3= new Pokemon(PokemonSpecies::Squirtle);
-            caughtPokemons.push_back(startPokemon1);
-            caughtPokemons.push_back(startPokemon2);
-            caughtPokemons.push_back(startPokemon3);
-            for(int i=0;i<caughtPokemons.size();i++){
-                selectedTeam.push_back(caughtPokemons.at(i));
+            if(caughtPokemons.empty()){
+                Pokemon* startPokemon1= new Pokemon(PokemonSpecies::Bulbasaur);
+                Pokemon* startPokemon2= new Pokemon(PokemonSpecies::Charmander);
+                Pokemon* startPokemon3= new Pokemon(PokemonSpecies::Squirtle);
+                caughtPokemons.push_back(startPokemon1);
+                caughtPokemons.push_back(startPokemon2);
+                caughtPokemons.push_back(startPokemon3);
+                for(int i=0;i<caughtPokemons.size();i++){
+                    selectedTeam.push_back(caughtPokemons.at(i));
+                }
             }
         }
         Player(int mon, Inventory* myInven) : money(mon), myInventory(myInven), isEnded(false){
-            Pokemon* startPokemon1= new Pokemon(PokemonSpecies::Bulbasaur);
-            Pokemon* startPokemon2= new Pokemon(PokemonSpecies::Charmander);
-            Pokemon* startPokemon3= new Pokemon(PokemonSpecies::Squirtle);
-            caughtPokemons.push_back(startPokemon1);
-            caughtPokemons.push_back(startPokemon2);
-            caughtPokemons.push_back(startPokemon3);
-
-            for(int i=0;i<caughtPokemons.size();i++){
-                selectedTeam.push_back(caughtPokemons.at(i));
+            if(caughtPokemons.empty()){
+                Pokemon* startPokemon1= new Pokemon(PokemonSpecies::Bulbasaur);
+                Pokemon* startPokemon2= new Pokemon(PokemonSpecies::Charmander);
+                Pokemon* startPokemon3= new Pokemon(PokemonSpecies::Squirtle);
+                caughtPokemons.push_back(startPokemon1);
+                caughtPokemons.push_back(startPokemon2);
+                caughtPokemons.push_back(startPokemon3);
+                for(int i=0;i<caughtPokemons.size();i++){
+                    selectedTeam.push_back(caughtPokemons.at(i));
+                }
             }
         }
         ~Player();

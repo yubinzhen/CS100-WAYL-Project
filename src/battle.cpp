@@ -52,6 +52,7 @@ void Battle::battleMenu() {
             //viewItems();
         } else if (choice == 2) {
             startBattle();
+            flag = false;
         } else if (choice == 3) {
             cout << "You have fleed from the battle" << endl;
             flag = false;
@@ -183,10 +184,9 @@ void Battle::playerTurn() {
     // Display the attack message
     cout << activePokemon->speciesToString(activePokemon->getSpecies()) << " used ";
     selectedMove->displayInfo();
-    cout << "!" << endl;
 
     // Calculate and apply damage
-    int damage = selectedMove->calculateDamage(*activePokemon, *wildPokemon);
+    int damage = selectedMove->calculateDamage(activePokemon, wildPokemon);
     wildPokemonCurrHealth = wildPokemonCurrHealth - damage;
 
     cout << "It dealt " << damage << " damage!" << endl;
@@ -194,19 +194,16 @@ void Battle::playerTurn() {
     // Check if the wild Pokémon fainted
     if (wildPokemon->getBaseHP() <= 0) {
         cout << "The wild Pokémon fainted!" << endl;
-        endBattle(); // End the battle if wild Pokémon faints
     }
 }
 
 void Battle::wildPokemonTurn() {
     cout << "The wild " << wildPokemon->speciesToString(wildPokemon->getSpecies()) << " is preparing to attack!\n";
-
-    Attack* chosenMove = wildPokemon->wildPokemonMove(*activePokemon);
-
+    Attack* chosenMove = wildPokemon->wildPokemonMove(activePokemon);
     cout << wildPokemon->speciesToString(wildPokemon->getSpecies()) << " used " << chosenMove->getName(chosenMove->getMoves()) << "!\n";
 
     // Calculate damage to the player's active Pokémon
-    int damage = chosenMove->calculateDamage(*wildPokemon, *activePokemon);
+    int damage = chosenMove->calculateDamage(wildPokemon, activePokemon);
     activePokemonHealth = activePokemonHealth - damage;
 
     cout << activePokemon->speciesToString(activePokemon->getSpecies()) << " took " << damage << " damage!\n";
@@ -309,6 +306,7 @@ void Battle::endBattle() {
     //     }
      } else {
         cout << "You Won!" << endl;
+
         //  cout << endl;
         //  player->myInventory->addMoney(100);
         //  int EXPAmount = activePokemon->calculateEXP(wildPokemon);
