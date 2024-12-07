@@ -1,0 +1,34 @@
+Bulbasaur
+1
+0
+22
+Solar Beam
+Mega Drain
+Super Fang
+...
+Charmander
+1
+0
+24
+Flamethrower
+Fire Blast
+Bind
+...
+Squirtle
+1
+0
+15
+Crabhammer
+Crabhammer
+Quick Attack
+...
+-----------
+0
+0
+0
+0
+0
+0
+0
+0
+0

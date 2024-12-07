@@ -5,7 +5,7 @@ using namespace std;
 
 
 Player::~Player() {
-   //delete myInventory;
+   delete myInventory;
    
    for (Pokemon* p : caughtPokemons) {
       delete p;
